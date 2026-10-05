@@ -171,20 +171,21 @@ export default function App() {
       {/* Comprehensive Footer */}
       <Footer onSelectNav={handleSelectNav} />
 
-      {/* Floating WhatsApp Quick Connect Button */}
+      {/* Floating WhatsApp Quick Connect Button to Official Number */}
       <div className="fixed bottom-6 right-6 z-40 flex items-center gap-2">
         <a
-          href="https://wa.me/919876543210?text=Hi%20Parindaa%20Travels!%20I'm%20planning%20a%20trip%20and%20need%20quick%20assistance."
+          href="https://api.whatsapp.com/send?phone=919326632288&text=Hi%20Parindaa%20Captain!%20I%20planning%20a%20trip%20and%20need%20quick%20assistance."
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-2.5 px-4 py-3 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs shadow-xl shadow-emerald-500/30 hover:scale-105 active:scale-95 transition-all group"
-          title="Direct WhatsApp Support"
+          className="flex items-center gap-2.5 px-4 py-3 rounded-full bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-bold text-xs shadow-xl shadow-emerald-500/30 hover:scale-105 transition-all group cursor-pointer"
+          title="Direct WhatsApp Support with Captain"
         >
           <div className="relative">
-            <MessageSquare className="w-5 h-5" />
+            <MessageSquare className="w-5 h-5 fill-white" />
             <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#cbb72c] rounded-full animate-ping" />
           </div>
           <span className="hidden sm:inline">WhatsApp Captain</span>
+          <span className="sm:hidden">Captain</span>
         </a>
       </div>
 

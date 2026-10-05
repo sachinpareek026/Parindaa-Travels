@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Film, Clapperboard, ExternalLink, Sparkles, Maximize2, X, MessageSquare } from 'lucide-react';
+import { OFFICIAL_WHATSAPP_NUMBER } from '../data/travelData';
 
 export const TravelCinemaBanner: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -64,7 +65,7 @@ export const TravelCinemaBanner: React.FC = () => {
             </a>
 
             <a
-              href="https://wa.me/917983637841?text=Hi%20Parindaa%2C%20I%20want%20to%20know%20more%20and%20book%20for%20India's%201st%20Experimental%20Travel%20Cinema%20Project%20with%20Chehra%20Films!"
+              href={`https://wa.me/${OFFICIAL_WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Parindaa, I want to know more and book for India's 1st Experimental Travel Cinema Project with Chehra Films!")}`}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold border border-white/15 transition-all cursor-pointer"

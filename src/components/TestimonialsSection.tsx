@@ -15,13 +15,13 @@ export const TestimonialsSection: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-slate-900 mt-2">
             Stories From Our <span className="font-script text-4xl sm:text-5xl font-bold text-[#3482a4]">Parindey</span>
           </h2>
-          <p className="text-sm text-slate-500 mt-2">
-            Over 25,000+ wanderers have embarked on adventures with us. Here is what they have to say.
+          <p className="text-sm text-slate-600 mt-2">
+            Proud to have completed 20+ signature group trips and served 200+ happy travelers over the last 2 years with our high-quality service.
           </p>
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {REVIEWS.map((review) => (
             <div
               key={review.id}

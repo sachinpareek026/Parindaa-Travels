@@ -67,10 +67,10 @@ export const FAQSection: React.FC = () => {
             </p>
           </div>
           <a
-            href="https://wa.me/919326632288"
+            href="https://api.whatsapp.com/send?phone=919326632288&text=Hi%20Parindaa%20Captain!%20I%20have%20a%20query%20about%20your%20group%20trips."
             target="_blank"
             rel="noreferrer"
-            className="px-5 py-2 text-xs font-bold text-white bg-[#3482a4] hover:bg-[#286b88] rounded-xl transition-colors whitespace-nowrap"
+            className="px-5 py-2.5 text-xs font-bold text-white bg-[#3482a4] hover:bg-[#286b88] active:scale-95 rounded-xl transition-all whitespace-nowrap shadow-xs"
           >
             Chat with Captain (+91 93266 32288)
           </a>

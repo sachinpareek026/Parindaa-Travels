@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Heart, MapPin, Star, Calendar, Clock, CheckCircle2, Maximize2, X, MessageSquare, Compass, Eye } from 'lucide-react';
-import { Destination } from '../data/travelData';
+import { Destination, OFFICIAL_WHATSAPP_NUMBER } from '../data/travelData';
 
 interface PopularDestinationsProps {
   destinations: Destination[];
@@ -303,7 +303,9 @@ export const PopularDestinations: React.FC<PopularDestinationsProps> = ({
               </div>
               <div className="flex items-center gap-2">
                 <a
-                  href={`https://wa.me/917983637841?text=Hi%20Parindaa%2C%20I%20want%20to%20inquire%20about%20the%20${encodeURIComponent(activePosterModal.name)}%20trip!`}
+                  href={`https://wa.me/${OFFICIAL_WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                    `✈️ *PARINDAA TRAVELS — TRIP INQUIRY*\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📍 *Trip:* ${activePosterModal.name}\n🗺️ *Region:* ${activePosterModal.region}\n⏱️ *Duration:* ${activePosterModal.duration}\n💰 *Price:* ₹${activePosterModal.priceINR.toLocaleString('en-IN')} / person\n🗓️ *Next Departure:* ${activePosterModal.departureDates[0]}\n\n💬 *Message:* Hi Parindaa Captain! I am inquiring about the ${activePosterModal.name} trip. Please share full details and booking procedure!\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+                  )}`}
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-1.5 py-2 px-4 text-xs font-bold text-slate-950 bg-[#cbb72c] hover:bg-[#e0cb00] rounded-xl transition-all shadow-md cursor-pointer"

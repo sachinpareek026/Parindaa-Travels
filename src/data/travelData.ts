@@ -1,3 +1,6 @@
+export const OFFICIAL_WHATSAPP_NUMBER = '919326632288';
+export const OFFICIAL_PHONE_DISPLAY = '+91 93266 32288';
+
 export interface Destination {
   id: string;
   name: string;
@@ -394,8 +397,8 @@ export const REVIEWS: Review[] = [
   {
     id: 'rev-1',
     author: 'Aarav Malhotra',
-    location: 'Mumbai, India',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+    location: 'Mumbai, Maharashtra',
+    avatar: 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=300&q=80',
     trip: 'Unseen Meghalaya (5D/6N)',
     rating: 5,
     date: 'September 2026',
@@ -404,35 +407,57 @@ export const REVIEWS: Review[] = [
   },
   {
     id: 'rev-2',
-    author: 'Neha & Siddharth Sharma',
+    author: 'Neha Sharma',
     location: 'New Delhi, India',
-    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80',
+    avatar: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=300&q=80',
     trip: 'Kashmir: City of Love (6D/5N)',
     rating: 5,
     date: 'August 2026',
-    comment: 'From the Shikara ride on Dal Lake to the Gulmarg Gondola Phase 2, everything was organized to perfection. Parindaa provided the best rates and genuine local hospitality.',
+    comment: 'From the Shikara ride on Dal Lake to the Gulmarg Gondola Phase 2, everything was organized to perfection. Parindaa provided the best rates, top safety, and genuine local hospitality.',
     verified: true
   },
   {
     id: 'rev-3',
     author: 'Rohan Deshmukh',
-    location: 'Pune, India',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+    location: 'Pune, Maharashtra',
+    avatar: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=300&q=80',
     trip: 'Leh Ladakh Expedition (7D/6N)',
     rating: 5,
     date: 'July 2026',
-    comment: 'Reaching Umling La (19,024 ft) with Parindaa marshals was the crowning moment of my life! Flawless bikes, oxygen backup, and starry nights at Pangong.',
+    comment: 'Reaching Umling La (19,024 ft) with Parindaa marshals was the crowning moment of my life! Flawless bikes, oxygen backup, and starry campfire nights at Pangong.',
     verified: true
   },
   {
     id: 'rev-4',
     author: 'Priya Iyer',
-    location: 'Bengaluru, India',
-    avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=200&q=80',
+    location: 'Bengaluru, Karnataka',
+    avatar: 'https://images.unsplash.com/photo-1614289371518-722f2615943d?auto=format&fit=crop&w=300&q=80',
     trip: 'Kainchi Dham & Mukteshwar Weekend',
     rating: 5,
     date: 'August 2026',
     comment: 'A soul-healing weekend trip to Neem Karoli Baba Kainchi Dham. The AC luxury traveler and hill stays were super comfortable. Booked again for my parents!',
+    verified: true
+  },
+  {
+    id: 'rev-5',
+    author: 'Vikramaditya Rathore',
+    location: 'Jaipur, Rajasthan',
+    avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80',
+    trip: 'Goa Beyond Beaches (4D/3N)',
+    rating: 5,
+    date: 'September 2026',
+    comment: 'Exploring hidden waterfalls and the vibrant Latin Quarter of Fontainhas with Parindaa was surreal. Best group vibe and genuine captain support throughout!',
+    verified: true
+  },
+  {
+    id: 'rev-6',
+    author: 'Ananya Sen',
+    location: 'Kolkata, West Bengal',
+    avatar: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=300&q=80',
+    trip: 'Kerala: God\'s Own Country (5D/4N)',
+    rating: 5,
+    date: 'August 2026',
+    comment: 'Munnar tea gardens and the Alleppey houseboat cruise were pure bliss. As a solo female traveler, safety and respect were paramount, and Parindaa delivered 100%!',
     verified: true
   }
 ];
@@ -559,7 +584,7 @@ export const CURATED_HOTELS = [
 export const FAQS = [
   {
     q: 'How do I book a seat on Parindaa group trips? What is the advance amount?',
-    a: 'You can reserve your spot directly with just a ₹3,000 partial deposit. The remaining balance can be cleared in simple installments up to 15 days prior to departure. You can also call or WhatsApp us on +91 9326632288 or +91 9828497392.'
+    a: 'You can reserve your spot directly with just a ₹3,000 partial deposit. The remaining balance can be cleared in simple installments up to 15 days prior to departure. You can also call or WhatsApp our Captain directly on our official business number +91 93266 32288.'
   },
   {
     q: 'Are solo travelers and female travelers safe on Parindaa journeys?',

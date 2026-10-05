@@ -14,8 +14,8 @@ export const WhyChooseParindaa: React.FC<WhyChooseParindaaProps> = ({ onOpenPlan
     },
     {
       icon: ThumbsUp,
-      title: 'Trusted by 25,000+ Parindey',
-      description: 'Over 25,000 free spirits have journeyed with us with a stellar 4.93/5 average traveler rating.',
+      title: '20+ Trips & 200+ Travelers',
+      description: 'Over 200+ happy customers served across 20+ curated group journeys in the last 2 years with our signature quality service.',
     },
     {
       icon: CalendarClock,

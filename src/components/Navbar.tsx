@@ -53,11 +53,11 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               <div>
                 <div className="flex items-center">
-                  <span className="text-2xl font-black font-display tracking-tight text-slate-900 group-hover:text-[#3482a4] transition-colors">
+                  <span className="text-lg sm:text-xl font-black font-display tracking-tight text-slate-900 group-hover:text-[#3482a4] transition-colors">
                     PARINDAA
                   </span>
                 </div>
-                <span className="block text-[10px] uppercase tracking-widest text-[#3482a4] font-bold -mt-1">
+                <span className="block text-[9px] uppercase tracking-wider text-[#3482a4] font-bold -mt-0.5">
                   Travels · India
                 </span>
               </div>
@@ -195,13 +195,13 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
           <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
             <a
-              href="https://wa.me/919326632288"
+              href="https://api.whatsapp.com/send?phone=919326632288&text=Hello%20Parindaa%20Travels!%20I%20want%20to%20inquire%20about%20your%20group%20trips."
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-2 rounded-lg"
             >
               <MessageSquare className="w-4 h-4" />
-              WhatsApp: 9326632288
+              WhatsApp: +91 93266 32288
             </a>
             <button
               onClick={() => {

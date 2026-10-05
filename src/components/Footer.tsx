@@ -27,11 +27,11 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
               </div>
               <div>
                 <div className="flex items-center">
-                  <span className="text-xl font-black font-display tracking-tight text-white">
+                  <span className="text-lg font-black font-display tracking-tight text-white">
                     PARINDAA
                   </span>
                 </div>
-                <span className="block text-[10px] uppercase tracking-widest text-[#4a97ba] font-extrabold -mt-0.5">
+                <span className="block text-[9px] uppercase tracking-wider text-[#4a97ba] font-bold -mt-0.5">
                   Travels · India
                 </span>
               </div>
@@ -176,7 +176,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
             </h4>
             <div className="space-y-2.5">
               <a
-                href="https://wa.me/919326632288"
+                href="https://api.whatsapp.com/send?phone=919326632288&text=Hello%20Parindaa%20Travels!%20I%20want%20to%20inquire%20about%20your%20group%20trips."
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 hover:text-white transition-colors"

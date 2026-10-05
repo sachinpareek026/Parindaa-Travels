@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Mountain, Waves, Globe, Compass, Users, Heart, Shield, Check, Send, MessageSquare } from 'lucide-react';
+import { OFFICIAL_WHATSAPP_NUMBER, OFFICIAL_PHONE_DISPLAY } from '../data/travelData';
 
 interface TripPlannerModalProps {
   isOpen: boolean;
@@ -21,6 +22,7 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
   const [userName, setUserName] = useState('');
   const [userPhone, setUserPhone] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [submittedWhatsappUrl, setSubmittedWhatsappUrl] = useState('');
 
   if (!isOpen) return null;
 
@@ -44,11 +46,54 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!userName || !userPhone) return;
+
+    const refId = Math.floor(100000 + Math.random() * 900000);
+    const currentDate = new Date().toLocaleDateString('en-IN', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    });
+
+    const formattedMessage = `🗺️ *PARINDAA TRAVELS — CUSTOM TRIP INQUIRY*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔖 *REF NO:* #PAR-CUSTOM-${refId}
+📅 *DATE:* ${currentDate}
+
+📍 *CUSTOM TRIP PREFERENCES:*
+• *Destination Vibe:* ${destinationVibe}
+• *Travel Style:* ${tripStyle}
+• *Trip Duration:* ${durationDays} Days / ${durationDays - 1} Nights
+• *Group Size:* ${travelerCount} Persons
+• *Budget Preference:* ${budgetTier}
+• *Estimated Package Quote:* ${priceFormatted} (${perPersonFormatted} / person)
+
+👤 *PRIMARY TRAVELER DETAILS:*
+• *Lead Name:* ${userName.trim()}
+• *WhatsApp Contact:* ${userPhone.trim()}
+
+💬 *MESSAGE TO CAPTAIN:*
+"Hi Parindaa Captain! I have customized my dream trip on your website and would love to receive a personalized day-wise itinerary, stay recommendations, and final quote. Please guide us!"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚡ *Sent via Parindaa Travels Official Website Portal*
+📞 *Official Business WhatsApp: ${OFFICIAL_PHONE_DISPLAY}*`;
+
+    const encodedMessage = encodeURIComponent(formattedMessage);
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${OFFICIAL_WHATSAPP_NUMBER}&text=${encodedMessage}`;
+
+    setSubmittedWhatsappUrl(whatsappUrl);
     setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      onClose();
-    }, 2800);
+
+    try {
+      const win = window.open(whatsappUrl, '_blank');
+      if (!win || win.closed || typeof win.closed === 'undefined') {
+        setTimeout(() => {
+          window.location.href = whatsappUrl;
+        }, 1200);
+      }
+    } catch {
+      window.location.href = whatsappUrl;
+    }
   };
 
   const whatsappMessage = encodeURIComponent(
@@ -117,14 +162,40 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
         {/* Form Body */}
         <div className="overflow-y-auto p-6 flex-1 space-y-6">
           {submitted ? (
-            <div className="text-center py-10 space-y-3">
-              <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
-                <Check className="w-8 h-8" />
+            <div className="text-center py-8 space-y-4">
+              <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-sm">
+                <Check className="w-8 h-8 stroke-[3]" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900">Custom Trip Plan Created!</h3>
-              <p className="text-xs text-slate-500 max-w-md mx-auto">
-                Thank you, {userName || 'Traveler'}! Our trip captain has received your custom plan and will share your personalized day-wise itinerary on WhatsApp shortly.
-              </p>
+              <div className="space-y-1">
+                <h3 className="text-xl font-bold text-slate-900 font-display">Custom Trip Plan Shared to WhatsApp!</h3>
+                <p className="text-xs text-slate-500 max-w-md mx-auto">
+                  Thank you, <strong className="text-slate-800">{userName}</strong>! Your customized trip preferences have been formatted and redirected to our official business WhatsApp (<strong className="text-slate-900">{OFFICIAL_PHONE_DISPLAY}</strong>).
+                </p>
+              </div>
+
+              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a
+                  href={submittedWhatsappUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] active:scale-95 text-slate-950 text-xs font-bold transition-all shadow-md cursor-pointer"
+                >
+                  <MessageSquare className="w-4 h-4 fill-slate-950" />
+                  <span>Open WhatsApp to Continue Chat</span>
+                </a>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSubmitted(false);
+                    onClose();
+                    setStep(1);
+                  }}
+                  className="w-full sm:w-auto px-5 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors cursor-pointer"
+                >
+                  Done & Close
+                </button>
+              </div>
             </div>
           ) : (
             <>
