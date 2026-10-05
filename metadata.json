@@ -1,0 +1,6 @@
+{
+  "name": "Parindaa Travels | Fly Beyond Borders",
+  "description": "Curated experiential travel, Himalayan treks, and international getaways crafted for free-spirited souls by Parindaa India.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-script: 'Caveat', cursive;
+
+    /* Parindaa Brand: Muted, less vibrant colors matching official logo */
+    /* Logo Yellow (#E0CB00) softened to elegant, less vibrant tone (~64% sat) */
+    --brand-yellow: #cbb72c;
+    --brand-yellow-hover: #b8a422;
+    --brand-yellow-light: #fbf9ee;
+    --brand-yellow-muted: #dcd07e;
+
+    /* Logo Sky (#05ADEB) softened to calm, less vibrant slate-sky (~55% sat) */
+    --brand-sky: #3482a4;
+    --brand-sky-hover: #286b88;
+    --brand-sky-light: #eff5f8;
+    --brand-sky-dark: #1f566e;
+    --brand-sky-muted: #669bb5;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+}
+
+.font-script {
+  font-family: 'Caveat', cursive;
+}
+
+.font-display {
+  font-family: 'Outfit', var(--font-sans);
+}
+
+.bg-brand-sky {
+  background-color: #3482a4;
+}
+
+.hover\:bg-brand-sky-dark:hover {
+  background-color: #286b88;
+}
+
+.text-brand-sky {
+  color: #3482a4;
+}
+
+.border-brand-sky {
+  border-color: #3482a4;
+}
+
+.bg-brand-yellow {
+  background-color: #cbb72c;
+}
+
+.text-brand-yellow {
+  color: #cbb72c;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
