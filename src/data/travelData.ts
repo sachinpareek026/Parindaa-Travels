@@ -6,6 +6,7 @@ export interface Destination {
   tagline: string;
   description: string;
   image: string;
+  heroImage: string;
   secondaryImages: string[];
   priceINR: number;
   priceUSD: number;
@@ -57,6 +58,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Caves & Waterfall Capital of India',
     description: 'Explore 13+ scenic waterfalls, 7 mysterious limestone caves, living root bridges, and deep canyon viewpoints across Shillong, Cherrapunji, Dawki, and Krang Shuri.',
     image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220481/728704385_17917244007398063_3477220131125489886_n.webp',
+    heroImage: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=2000&q=85',
     secondaryImages: [
       'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
@@ -105,6 +107,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'City of Love, City of Dreams: Srinagar · Gulmarg · Sonmarg',
     description: 'Drift along serene waters on a handcrafted shikara in Dal Lake, ride the world-renowned Gulmarg Gondola over snowy peaks, and wander through golden meadow glaciers of Sonmarg and Pahalgam.',
     image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220480/759986781_17923503375398063_5737305628230900821_n.webp',
+    heroImage: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=2000&q=85',
     secondaryImages: [
       'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=800&q=80',
@@ -154,6 +157,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Grishneshwar · Bhimashankar · Gadhkalika · Harsiddhi Mata',
     description: 'Embark on a sacred spiritual pilgrimage covering holy Jyotirlingas and revered Shaktipeeths with seamless comfortable transfers, VIP darshan coordination, and satvik stays.',
     image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220481/727158786_17916396195398063_5804642615287964419_n.webp',
+    heroImage: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=2000&q=85',
     secondaryImages: [
       'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
     ],
@@ -201,6 +205,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Neeb Karori Baba Ashram & Mukteshwar Himalayan Vistas',
     description: 'Experience deep spiritual peace at Neem Karoli Baba Kainchi Dham Ashram, soak in 360-degree snow-capped Himalayan panoramas at Mukteshwar, and walk pine forests with fellow Parindey.',
     image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220481/761747174_17923506819398063_6676138420613236619_n.webp',
+    heroImage: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=85',
     secondaryImages: [
       'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
     ],
@@ -245,6 +250,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Dudhsagar Waterfalls · Major North & South Beaches · Fun Roads',
     description: 'Feel the sea wind on two wheels! Cruise along palm-fringed coastal highways, marvel at the four-tiered Dudhsagar Waterfalls, explore secret southern coves, and party under starry beach skies.',
     image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220481/724279254_17915485848398063_8979356828108422140_n.webp',
+    heroImage: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=2000&q=85',
     secondaryImages: [
       'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80',
     ],
@@ -292,6 +298,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Leh · Nubra Valley · Turtuk · Pangong Lake · Hanle · Umling La',
     description: 'Ride across the world highest motorable pass Umling La (19,024 ft), camp beside the surreal shifting blue waters of Pangong Tso, and stargaze at the Dark Sky Reserve in Hanle.',
     image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220481/726660058_17915957589398063_1894404032407606329_n.webp',
+    heroImage: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=2000&q=85',
     secondaryImages: [
       'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80',
     ],
@@ -341,6 +348,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Munnar 2D · Thekkady · Alleppey Houseboat · Kanyakumari',
     description: 'Immerse in velvet emerald tea estates in Munnar, spice hills in Thekkady, an authentic overnight houseboat cruise in Alleppey backwaters, and Kanyakumari coastal sunrise.',
     image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220482/724061399_17915593464398063_5564154880270854714_n.webp',
+    heroImage: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=2000&q=85',
     secondaryImages: [
       'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80',
     ],

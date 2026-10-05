@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { HeroFoxico } from './components/HeroFoxico';
 import { SearchWidget, SearchCriteria } from './components/SearchWidget';
 import { TrustPillars } from './components/TrustPillars';
+import { TravelCinemaBanner } from './components/TravelCinemaBanner';
 import { PopularDestinations } from './components/PopularDestinations';
 import { WhyChooseParindaa } from './components/WhyChooseParindaa';
 import { InstagramFeed } from './components/InstagramFeed';
@@ -133,7 +134,10 @@ export default function App() {
         {/* 4 Trust & Safety Pillars */}
         <TrustPillars />
 
-        {/* Popular Destinations Grid (Wanderly Reference) */}
+        {/* India's 1st Experimental Travel Cinema Project Feature Banner */}
+        <TravelCinemaBanner />
+
+        {/* Popular Destinations Grid (Official Parindaa Group Trips) */}
         <PopularDestinations
           destinations={DESTINATIONS}
           onSelectDestination={(dest) => {

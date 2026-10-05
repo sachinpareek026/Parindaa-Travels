@@ -31,7 +31,7 @@ export const InstagramFeed: React.FC = () => {
 
           {/* Instagram Account Stat Bar */}
           <div className="flex items-center gap-4 bg-white/5 border border-white/10 p-3 rounded-2xl backdrop-blur-md">
-            <div className="w-13 h-13 rounded-full p-0.5 bg-black flex items-center justify-center shrink-0 shadow-md ring-1 ring-slate-800">
+            <div className="w-13 h-13 flex items-center justify-center shrink-0">
               <img
                 src="/logo.png"
                 alt="@parindaa.india"
@@ -136,7 +136,7 @@ export const InstagramFeed: React.FC = () => {
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full p-0.5 bg-black flex items-center justify-center shrink-0 ring-1 ring-slate-700">
+                <div className="w-8 h-8 flex items-center justify-center shrink-0">
                   <img src="/logo.png" alt="Parindaa" className="w-full h-full object-contain" />
                 </div>
                 <div>

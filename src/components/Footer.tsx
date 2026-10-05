@@ -14,7 +14,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
           {/* Brand Info with Official Company Logo */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full p-0.5 bg-black flex items-center justify-center shrink-0 ring-1 ring-slate-800 shadow-md">
+              <div className="w-12 h-12 flex items-center justify-center shrink-0">
                 <img
                   src="/logo.png"
                   alt="Parindaa Travels"

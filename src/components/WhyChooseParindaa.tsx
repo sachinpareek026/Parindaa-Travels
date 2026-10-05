@@ -100,8 +100,8 @@ export const WhyChooseParindaa: React.FC<WhyChooseParindaaProps> = ({ onOpenPlan
                   </p>
                 </div>
 
-                {/* Parindaa Logo Circle Watermark */}
-                <div className="w-14 h-14 rounded-full p-0.5 bg-black flex items-center justify-center shrink-0 shadow-lg ring-1 ring-white/15 hidden sm:flex">
+                {/* Parindaa Logo */}
+                <div className="w-14 h-14 flex items-center justify-center shrink-0 hidden sm:flex">
                   <img
                     src="/logo.png"
                     alt="Parindaa Travels"

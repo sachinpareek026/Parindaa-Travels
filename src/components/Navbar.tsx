@@ -36,8 +36,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => handleNavClick('hero')}
               className="flex items-center gap-3 group text-left cursor-pointer"
             >
-              {/* Official Parindaa Logo Circle - Full image contained properly without cutting border */}
-              <div className="relative w-12 h-12 rounded-full p-0.5 bg-black flex items-center justify-center shrink-0 ring-1 ring-slate-800 shadow-sm group-hover:scale-105 transition-transform duration-300">
+              {/* Official Parindaa Logo - Clean without black border */}
+              <div className="relative w-12 h-12 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
                 <img
                   src="/logo.png"
                   alt="Parindaa Travels"
@@ -73,10 +73,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               Home
             </button>
             <button
-              onClick={() => handleNavClick('search')}
-              className="hover:text-[#3482a4] transition-colors cursor-pointer"
+              onClick={() => handleNavClick('travel-cinema')}
+              className="hover:text-[#3482a4] transition-colors cursor-pointer flex items-center gap-1"
             >
-              Search & Book
+              <span className="w-1.5 h-1.5 rounded-full bg-[#cbb72c]" />
+              <span>Cinema Project</span>
             </button>
             <button
               onClick={() => handleNavClick('destinations')}
@@ -89,18 +90,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="hover:text-[#3482a4] transition-colors cursor-pointer"
             >
               Why Parindaa
-            </button>
-            <button
-              onClick={() => handleNavClick('community')}
-              className="hover:text-[#3482a4] transition-colors cursor-pointer"
-            >
-              Tribe Stories
-            </button>
-            <button
-              onClick={() => handleNavClick('faqs')}
-              className="hover:text-[#3482a4] transition-colors cursor-pointer"
-            >
-              FAQs
             </button>
           </nav>
 
@@ -185,10 +174,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               Home
             </button>
             <button
-              onClick={() => handleNavClick('search')}
-              className="block w-full text-left px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-[#3482a4] rounded-lg"
+              onClick={() => handleNavClick('travel-cinema')}
+              className="block w-full text-left px-3 py-2 text-sm font-semibold text-[#3482a4] hover:bg-slate-50 rounded-lg flex items-center gap-2"
             >
-              Search & Book
+              <span className="w-1.5 h-1.5 rounded-full bg-[#cbb72c]" />
+              <span>Travel Cinema Project</span>
             </button>
             <button
               onClick={() => handleNavClick('destinations')}
@@ -201,18 +191,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="block w-full text-left px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-[#3482a4] rounded-lg"
             >
               Why Parindaa Travels
-            </button>
-            <button
-              onClick={() => handleNavClick('community')}
-              className="block w-full text-left px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-[#3482a4] rounded-lg"
-            >
-              Tribe Stories & Reels
-            </button>
-            <button
-              onClick={() => handleNavClick('faqs')}
-              className="block w-full text-left px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-[#3482a4] rounded-lg"
-            >
-              Frequently Asked Questions
             </button>
           </div>
           <div className="pt-3 border-t border-slate-100 flex items-center justify-between">

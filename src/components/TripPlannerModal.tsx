@@ -62,7 +62,7 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
         {/* Header */}
         <div className="p-6 bg-gradient-to-r from-slate-950 via-[#1f566e] to-[#3482a4] text-white flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full p-0.5 bg-black flex items-center justify-center shrink-0 shadow-md ring-1 ring-slate-800">
+            <div className="w-12 h-12 flex items-center justify-center shrink-0">
               <img
                 src="/logo.png"
                 alt="Parindaa Travels"
