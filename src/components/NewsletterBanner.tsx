@@ -18,8 +18,8 @@ export const NewsletterBanner: React.FC = () => {
     <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Banner Card matching Wanderly Photo Reference with Muted Sky & Logo Yellow */}
-        <div className="bg-gradient-to-r from-slate-950 via-[#1f566e] to-[#3482a4] rounded-3xl p-8 sm:p-10 shadow-xl shadow-[#3482a4]/20 text-white relative overflow-hidden">
+        {/* Banner Card matching Wanderly Photo Reference with Muted Sky & Logo Yellow (No Black) */}
+        <div className="bg-gradient-to-r from-[#174e66] via-[#1f6685] to-[#3482a4] rounded-3xl p-8 sm:p-10 shadow-xl shadow-[#3482a4]/20 text-white relative overflow-hidden">
           
           {/* Subtle background decoration */}
           <div className="absolute -right-10 -bottom-10 w-64 h-64 bg-[#cbb72c]/15 rounded-full blur-2xl pointer-events-none" />

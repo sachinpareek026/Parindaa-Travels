@@ -36,6 +36,14 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
                 </span>
               </div>
             </div>
+
+            {/* Udyam Registration No - Displayed directly below Logo Section */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs text-slate-300">
+              <span className="w-2 h-2 rounded-full bg-[#cbb72c] shrink-0" />
+              <span className="text-[11px] text-slate-400 font-medium">Udyam Reg. No:</span>
+              <span className="font-mono font-bold text-white tracking-wide">UDYAM-RJ-30-0141140</span>
+            </div>
+
             <p className="text-slate-400 leading-relaxed text-xs max-w-sm">
               Crafting soulful, safe, and exhilarating travel adventures for the free-spirited traveler. Curated group departures, Himalayan expeditions, and bespoke global holidays.
             </p>
@@ -181,8 +189,15 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
                 rel="noreferrer"
                 className="flex items-center gap-2 hover:text-white transition-colors"
               >
-                <Phone className="w-3.5 h-3.5 text-[#4a97ba] shrink-0" />
-                <span>+91 93266 32288</span>
+                <Phone className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>WhatsApp: +91 93266 32288</span>
+              </a>
+              <a
+                href="tel:+919828497392"
+                className="flex items-center gap-2 hover:text-white transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5 text-[#cbb72c] shrink-0" />
+                <span>Call / Support: +91 98284 97392</span>
               </a>
               <a
                 href="mailto:contact@parindaaindia.com"
@@ -193,12 +208,20 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
               </a>
               <div className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#4a97ba] shrink-0 mt-0.5" />
-                <span>
-                  Connaught Place, New Delhi & C-Scheme, Jaipur, Rajasthan, India
-                </span>
+                <div className="space-y-1">
+                  <p>
+                    <strong className="text-white">Mumbai Office:</strong> A.K. Marg, Bandra East, Mumbai, Maharashtra
+                  </p>
+                  <p className="text-slate-400 text-[11px]">
+                    <strong className="text-slate-300">Branches:</strong> Connaught Place, New Delhi & C-Scheme, Jaipur
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="pt-2">
+            <div className="pt-2 flex flex-wrap gap-1.5">
+              <span className="inline-block text-[10px] text-slate-300 border border-slate-800 rounded-md px-2 py-1 bg-slate-900/60 font-medium">
+                UDYAM-RJ-30-0141140
+              </span>
               <span className="inline-block text-[10px] text-slate-400 border border-slate-800 rounded-md px-2 py-1 bg-slate-900/50">
                 GST Registered & Ministry Recognized
               </span>

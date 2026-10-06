@@ -105,7 +105,7 @@ export const TripPlannerModal: React.FC<TripPlannerModalProps> = ({
       <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col">
         
         {/* Header */}
-        <div className="p-6 bg-gradient-to-r from-slate-950 via-[#1f566e] to-[#3482a4] text-white flex items-center justify-between">
+        <div className="p-6 bg-gradient-to-r from-[#174e66] via-[#1f6685] to-[#3482a4] text-white flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 flex items-center justify-center shrink-0">
               <img

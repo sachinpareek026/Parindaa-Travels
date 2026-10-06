@@ -1,5 +1,8 @@
 export const OFFICIAL_WHATSAPP_NUMBER = '919326632288';
 export const OFFICIAL_PHONE_DISPLAY = '+91 93266 32288';
+export const SECONDARY_SUPPORT_PHONE = '+91 98284 97392';
+export const UDYAM_REGISTRATION_NUMBER = 'UDYAM-RJ-30-0141140';
+export const MUMBAI_OFFICE_ADDRESS = 'A.K. Marg, Bandra East, Mumbai, Maharashtra';
 
 export interface Destination {
   id: string;
@@ -584,7 +587,7 @@ export const CURATED_HOTELS = [
 export const FAQS = [
   {
     q: 'How do I book a seat on Parindaa group trips? What is the advance amount?',
-    a: 'You can reserve your spot directly with just a ₹3,000 partial deposit. The remaining balance can be cleared in simple installments up to 15 days prior to departure. You can also call or WhatsApp our Captain directly on our official business number +91 93266 32288.'
+    a: 'You can reserve your spot directly with just a ₹3,000 partial deposit. The remaining balance can be cleared in simple installments up to 15 days prior to departure. You can also call or WhatsApp our Captain directly on +91 93266 32288 or +91 98284 97392.'
   },
   {
     q: 'Are solo travelers and female travelers safe on Parindaa journeys?',
