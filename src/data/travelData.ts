@@ -393,6 +393,105 @@ export const DESTINATIONS: Destination[] = [
       { day: 4, title: 'Alleppey Backwaters Houseboat Cruise', details: 'Board your private handcrafted houseboat at noon. Glide through palm-fringed lagoons while savoring freshly prepared Karimeen fish.', meals: 'Breakfast, Lunch & Dinner', stay: 'Private Houseboat, Alleppey' },
       { day: 5, title: 'Fort Kochi Heritage & Farewell Kerala', details: 'Morning backwater sunrise breakfast. Visit Chinese fishing nets in Fort Kochi before transfer to Cochin Airport.', meals: 'Breakfast Included', stay: 'Departure' },
     ]
+  },
+  {
+    id: 'andaman-island-odyssey',
+    name: 'Andaman Island Odyssey',
+    country: 'India',
+    region: 'Andaman & Nicobar Islands',
+    tagline: 'Port Blair · Havelock Island · Radhanagar Beach · Neil Island',
+    description: 'Dive into crystal-turquoise lagoons, sail across the Bay of Bengal on high-speed catamarans, walk white coral beaches of Havelock, and witness breathtaking sunsets at Radhanagar Beach.',
+    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791318534/SaveClip.App_728243718_17916647766398063_7418744831974953095_n.webp',
+    heroImage: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=2000&q=85',
+    secondaryImages: [
+      'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+    ],
+    priceINR: 18999,
+    priceUSD: 235,
+    duration: '6 Days / 5 Nights',
+    rating: 4.96,
+    reviewCount: 284,
+    badge: 'Trending',
+    category: 'adventure',
+    highlights: [
+      'Radhanagar Beach Sunset (Ranked Asia’s #1 Best Beach)',
+      'Elephant Beach Snorkeling & Coral Reef Water Adventures',
+      'Private High-Speed Catamaran Cruise between Islands',
+      'Historic Cellular Jail Light & Sound Show',
+      'Natural Rock Bridge & Laxmanpur Beach at Neil Island'
+    ],
+    inclusions: [
+      'Boutique Beachside Resort Stays in Port Blair & Havelock',
+      'Inter-Island Luxury Catamaran Cruise Tickets (Makruzz / Green Ocean)',
+      'Daily Buffet Breakfast & Coastal Dinners',
+      'Private AC Vehicles for all Transfers & Sightseeing',
+      'Dedicated Parindaa Trip Captain & Certified Water Marshals'
+    ],
+    exclusions: [
+      'Flights to/from Port Blair Veer Savarkar Airport (IXZ)',
+      'Optional Scuba Diving or Sea Kart sessions (can be booked via Captain)',
+      'Personal watersports at Elephant Beach',
+      'Camera permits and personal expenses'
+    ],
+    departureDates: ['18 Oct 2026', '28 Oct 2026', '11 Nov 2026', '25 Nov 2026', '09 Dec 2026', '23 Dec 2026'],
+    itinerary: [
+      { day: 1, title: 'Arrival in Port Blair & Cellular Jail Memorial', details: 'Touchdown at Port Blair Airport and meet your Parindaa Captain. Check in to coastal resort. Visit historic Cellular Jail followed by the stirring evening Light & Sound presentation.', meals: 'Dinner Included', stay: 'Sea Shell Resort / Boutique Stay, Port Blair' },
+      { day: 2, title: 'Port Blair to Havelock Island via Catamaran', details: 'Board morning high-speed catamaran cruise across the azure Andaman Sea. Check into Havelock beachside cottages. Evening sunset at world-acclaimed Radhanagar Beach (Beach No. 7).', meals: 'Breakfast & Dinner', stay: 'Havelock Island Beach Resort' },
+      { day: 3, title: 'Elephant Beach Coral Reef Exploration & Water Sports', details: 'Speedboat ride to Elephant Beach. Snorkel through living coral reefs with tropical clownfish, or experience optional scuba diving, jet skiing, and sea walking.', meals: 'Breakfast & Dinner', stay: 'Havelock Island Beach Resort' },
+      { day: 4, title: 'Havelock to Neil Island (Shaheed Dweep)', details: 'Cruise to serene Neil Island. Visit Bharatpur Beach with turquoise shallow waters, the natural coral bridge formation, and watch golden sunset at Laxmanpur Beach.', meals: 'Breakfast & Dinner', stay: 'Neil Island Eco Resort' },
+      { day: 5, title: 'Neil Island to Port Blair & Chidiya Tapu Sunset', details: 'Catch morning catamaran return to Port Blair. Afternoon scenic coastal drive to Chidiya Tapu (Bird Island) for an unforgettable sunset over the Bay of Bengal.', meals: 'Breakfast & Dinner', stay: 'Boutique Resort, Port Blair' },
+      { day: 6, title: 'Farewell Andaman & Journey Home', details: 'Enjoy morning tropical breakfast and fresh tender coconut before airport transfer with lifelong memories and group photos.', meals: 'Breakfast Included', stay: 'Departure' },
+    ]
+  },
+  {
+    id: 'kashmir-gulmarg',
+    name: 'Kashmir - Gulmarg',
+    country: 'India',
+    region: 'Kashmir Valley, North India',
+    tagline: 'Gulmarg Gondola · Apharwat Peak 13,780 ft · Dal Lake · Drung Waterfall',
+    description: 'Ascend into a winter wonderland! Ride the world’s second-highest operating cable car up to Apharwat Peak at 13,780 ft, ski through powder snow meadows in Gulmarg, visit the frozen Drung waterfall, and stay on heritage Dal Lake houseboats.',
+    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791223245/splitimage.im-2_6.png',
+    heroImage: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=2000&q=85',
+    secondaryImages: [
+      'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80',
+    ],
+    priceINR: 13999,
+    priceUSD: 175,
+    duration: '5 Days / 4 Nights',
+    rating: 4.98,
+    reviewCount: 390,
+    badge: 'Trending',
+    category: 'himalayan',
+    highlights: [
+      'Gulmarg Gondola Phase 1 (Kongdoori) & Phase 2 (Apharwat 13,780 ft)',
+      'Drung Frozen Waterfall & Tangmarg Pine Forest Valley',
+      'Beginner Snow Skiing & Sledge Experience on Powder Slopes',
+      'Heritage Hand-Carved Houseboat Stay on Dal Lake with Shikara Ride',
+      'Cozy Bonfire & Authentic Kashmiri Kahwa & Wazwan Dinners'
+    ],
+    inclusions: [
+      'Deluxe Snow Resorts in Gulmarg / Tangmarg & Dal Lake Houseboat',
+      'Daily Traditional Kashmiri Breakfast & Hot Wazwan Dinners',
+      'Private Chauffeur-driven AC/Heated Tempo Traveler throughout',
+      'Dedicated Parindaa Trip Captain & Certified Mountain Guide',
+      'All Tolls, Parking, Driver Charges & Union Clearances'
+    ],
+    exclusions: [
+      'Flight to Srinagar (SXR)',
+      'Gondola cable car ride tickets (Phase 1 & 2 can be arranged)',
+      'Personal winter jacket/snow boot rental (~₹250/day)',
+      'Personal snowmobile / ATV rides'
+    ],
+    departureDates: ['17 Oct 2026', '24 Oct 2026', '07 Nov 2026', '21 Nov 2026', '05 Dec 2026', '19 Dec 2026'],
+    itinerary: [
+      { day: 1, title: 'Srinagar Arrival & Heritage Dal Lake Houseboat Experience', details: 'Touchdown in Srinagar. Check into your wooden carved heritage houseboat on Dal Lake. Enjoy a sunset shikara ride through floating markets and Char Chinar.', meals: 'Dinner Included', stay: 'Dal Lake Heritage Houseboat' },
+      { day: 2, title: 'Scenic Drive to Gulmarg & Drung Frozen Waterfall', details: 'Drive past snow-dusted apple orchards to Tangmarg. Trek to the spectacular frozen Drung waterfall with ice stalactites. Check into Gulmarg snow resort.', meals: 'Breakfast & Dinner', stay: 'Pine View Snow Resort, Gulmarg' },
+      { day: 3, title: 'Apharwat Peak Gondola Cable Car & Snow Sports', details: 'Board the world-famous Gulmarg Gondola up to Phase 1 Kongdoori and Phase 2 Apharwat Peak (13,780 ft) for surreal 360-degree Himalayan snow views and skiing.', meals: 'Breakfast & Dinner', stay: 'Pine View Snow Resort, Gulmarg' },
+      { day: 4, title: 'Gulmarg Snow Meadows to Srinagar Heritage Walk', details: 'Morning sledging and snow photography in Gulmarg bowl. Drive back to Srinagar for a walk through historic Old City, Jamia Masjid, and spice bazaars.', meals: 'Breakfast & Dinner', stay: 'Deluxe Boutique Hotel, Srinagar' },
+      { day: 5, title: 'Warm Kahwa Breakfast & Airport Farewell', details: 'Sip hot saffron Kashmiri Kahwa with Girda bread breakfast before timely drop-off at Srinagar Airport for your return flight.', meals: 'Breakfast Included', stay: 'Departure' },
+    ]
   }
 ];
 

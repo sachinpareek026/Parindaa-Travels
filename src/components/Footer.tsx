@@ -174,6 +174,16 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
                   Kerala Backwaters Houseboat
                 </span>
               </li>
+              <li>
+                <span className="hover:text-[#4a97ba] transition-colors cursor-pointer">
+                  Andaman Island Odyssey
+                </span>
+              </li>
+              <li>
+                <span className="hover:text-[#4a97ba] transition-colors cursor-pointer">
+                  Kashmir - Gulmarg Winter Snow
+                </span>
+              </li>
             </ul>
           </div>
 
@@ -221,9 +231,6 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
             <div className="pt-2 flex flex-wrap gap-1.5">
               <span className="inline-block text-[10px] text-slate-300 border border-slate-800 rounded-md px-2 py-1 bg-slate-900/60 font-medium">
                 UDYAM-RJ-30-0141140
-              </span>
-              <span className="inline-block text-[10px] text-slate-400 border border-slate-800 rounded-md px-2 py-1 bg-slate-900/50">
-                GST Registered & Ministry Recognized
               </span>
             </div>
           </div>

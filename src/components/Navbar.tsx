@@ -28,16 +28,16 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           
           {/* Zone 1: Official Company Logo & Brand Lockup */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             <button
               onClick={() => handleNavClick('hero')}
-              className="flex items-center gap-3 group text-left cursor-pointer"
+              className="flex items-center gap-2.5 group text-left cursor-pointer"
             >
               {/* Official Parindaa Logo - Clean without black border */}
-              <div className="relative w-12 h-12 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
+              <div className="relative w-10 h-10 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
                 <img
                   src="/logo.png"
                   alt="Parindaa Travels"
@@ -53,11 +53,11 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               <div>
                 <div className="flex items-center">
-                  <span className="text-lg sm:text-xl font-black font-display tracking-tight text-slate-900 group-hover:text-[#3482a4] transition-colors">
+                  <span className="text-base sm:text-lg font-black font-display tracking-tight text-slate-900 group-hover:text-[#3482a4] transition-colors">
                     PARINDAA
                   </span>
                 </div>
-                <span className="block text-[9px] uppercase tracking-wider text-[#3482a4] font-bold -mt-0.5">
+                <span className="block text-[8.5px] uppercase tracking-wider text-[#3482a4] font-bold -mt-0.5">
                   Travels · India
                 </span>
               </div>
