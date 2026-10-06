@@ -3,9 +3,10 @@ import { Instagram, Facebook, Twitter, Youtube, Phone, Mail, MapPin } from 'luci
 
 interface FooterProps {
   onSelectNav: (sectionId: string) => void;
+  onOpenPolicy: (policyType: 'privacy' | 'terms' | 'cancellation' | 'safety') => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
+export const Footer: React.FC<FooterProps> = ({ onSelectNav, onOpenPolicy }) => {
   return (
     <footer className="bg-slate-950 text-slate-400 text-xs border-t border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -127,7 +128,39 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
                   onClick={() => onSelectNav('faqs')}
                   className="hover:text-[#4a97ba] transition-colors cursor-pointer text-left"
                 >
-                  Booking FAQs & Policies
+                  Booking FAQs
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onOpenPolicy('cancellation')}
+                  className="hover:text-[#4a97ba] transition-colors cursor-pointer text-left"
+                >
+                  Cancellation & Refunds
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onOpenPolicy('safety')}
+                  className="hover:text-[#4a97ba] transition-colors cursor-pointer text-left"
+                >
+                  Safety Guidelines & Protocols
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onOpenPolicy('privacy')}
+                  className="hover:text-[#4a97ba] transition-colors cursor-pointer text-left"
+                >
+                  Privacy Policy
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onOpenPolicy('terms')}
+                  className="hover:text-[#4a97ba] transition-colors cursor-pointer text-left"
+                >
+                  Terms of Service
                 </button>
               </li>
             </ul>
@@ -240,11 +273,35 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
         {/* Bottom copyright line */}
         <div className="mt-12 pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
           <p>© {new Date().getFullYear()} Parindaa Travels (Parindaa India). All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <span className="hover:text-slate-400 cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-slate-400 cursor-pointer">Terms of Service</span>
-            <span className="hover:text-slate-400 cursor-pointer">Cancellation Policy</span>
-            <span className="hover:text-slate-400 cursor-pointer">Safety Guidelines</span>
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2">
+            <button
+              onClick={() => onOpenPolicy('privacy')}
+              className="hover:text-white transition-colors cursor-pointer text-left"
+              title="View Parindaa Privacy Policy"
+            >
+              Privacy Policy
+            </button>
+            <button
+              onClick={() => onOpenPolicy('terms')}
+              className="hover:text-white transition-colors cursor-pointer text-left"
+              title="View Terms of Service"
+            >
+              Terms of Service
+            </button>
+            <button
+              onClick={() => onOpenPolicy('cancellation')}
+              className="hover:text-white transition-colors cursor-pointer text-left"
+              title="View Cancellation & Refund Policy"
+            >
+              Cancellation Policy
+            </button>
+            <button
+              onClick={() => onOpenPolicy('safety')}
+              className="hover:text-white transition-colors cursor-pointer text-left"
+              title="View Safety Guidelines & Mountain Protocols"
+            >
+              Safety Guidelines
+            </button>
           </div>
         </div>
 

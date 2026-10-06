@@ -45,26 +45,39 @@ export const TestimonialsSection: React.FC = () => {
               </div>
 
               {/* Author Info */}
-              <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-3">
-                <img
-                  src={review.avatar}
-                  alt={review.author}
-                  className="w-10 h-10 rounded-full object-cover shrink-0 border border-slate-200"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="min-w-0">
-                  <div className="flex items-center gap-1">
+              <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-3.5">
+                <div className="relative shrink-0">
+                  <img
+                    src={review.avatar}
+                    alt={review.author}
+                    className="w-12 h-12 rounded-full object-cover ring-2 ring-[#3482a4]/20 border border-slate-200 shadow-xs"
+                    referrerPolicy="no-referrer"
+                    loading="lazy"
+                  />
+                  {review.verified && (
+                    <span 
+                      className="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5 shadow-xs" 
+                      title="Verified Traveler"
+                    >
+                      <CheckCircle className="w-4 h-4 text-emerald-600 fill-emerald-100" />
+                    </span>
+                  )}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-1.5">
                     <h4 className="text-xs font-bold text-slate-900 truncate">
                       {review.author}
                     </h4>
-                    {review.verified && (
-                      <span title="Verified Traveler">
-                        <CheckCircle className="w-3 h-3 text-[#3482a4] shrink-0" />
-                      </span>
-                    )}
+                    <span className="text-[10px] text-emerald-700 bg-emerald-50 font-bold px-1.5 py-0.2 rounded-sm border border-emerald-200/60">
+                      Verified
+                    </span>
                   </div>
-                  <p className="text-[11px] text-slate-400 truncate">{review.trip}</p>
-                  <p className="text-[10px] text-slate-400">{review.location}</p>
+                  <p className="text-[11px] font-medium text-[#3482a4] truncate">{review.trip}</p>
+                  <div className="flex items-center gap-1 text-[10px] text-slate-400">
+                    <span>{review.location}</span>
+                    <span>•</span>
+                    <span>{review.date}</span>
+                  </div>
                 </div>
               </div>
             </div>
