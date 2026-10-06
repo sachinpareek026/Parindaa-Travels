@@ -82,21 +82,18 @@ export const HeroFoxico: React.FC<HeroFoxicoProps> = ({
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-slate-950/40" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-20 w-full">
-        {/* DESKTOP LAYOUT (lg and above) */}
-        <div className="hidden lg:grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* Left Column: Big Bold Typography & Editorial Value Prop */}
           <div className="lg:col-span-7 xl:col-span-8 space-y-5">
             
             {/* Tagline Badge with Muted Brand Sky & Logo Yellow */}
-            <div className="flex flex-wrap items-center gap-2">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900/80 backdrop-blur-md border border-[#3482a4]/40 text-xs font-bold tracking-wider text-white shadow-md">
-                <span className="w-2 h-2 rounded-full bg-[#cbb72c]" />
-                <span className="text-[#3482a4]">PARINDAA</span>
-                <span className="text-slate-500">·</span>
-                <span className="text-slate-200">EXPLORE · DREAM · DISCOVER</span>
-              </div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900/80 backdrop-blur-md border border-[#3482a4]/40 text-xs font-bold tracking-wider text-white shadow-md">
+              <span className="w-2 h-2 rounded-full bg-[#cbb72c]" />
+              <span className="text-[#3482a4]">PARINDAA</span>
+              <span className="text-slate-500">·</span>
+              <span className="text-slate-200">EXPLORE · DREAM · DISCOVER</span>
             </div>
 
             {/* Giant Title */}
@@ -193,7 +190,7 @@ export const HeroFoxico: React.FC<HeroFoxicoProps> = ({
           </div>
 
           {/* Right Column: Only Image Card of the Active Slide */}
-          <div className="lg:col-span-5 xl:col-span-4 flex justify-end">
+          <div className="lg:col-span-5 xl:col-span-4 flex justify-center lg:justify-end">
             <div 
               key={activeDestination.id}
               onClick={() => onExploreDestination(activeDestination)}
@@ -241,149 +238,6 @@ export const HeroFoxico: React.FC<HeroFoxicoProps> = ({
             </div>
           </div>
 
-        </div>
-
-        {/* MOBILE & TABLET LAYOUT (< lg): Card on the Right Side, Words Change on the Left */}
-        <div className="lg:hidden flex flex-col gap-4">
-          
-          {/* Top Badges */}
-          <div className="flex flex-wrap items-center gap-2">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md border border-[#3482a4]/40 text-[11px] font-bold tracking-wider text-white shadow-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#cbb72c]" />
-              <span className="text-[#3482a4]">PARINDAA</span>
-              <span className="text-slate-500">·</span>
-              <span className="text-slate-200">EXPLORE</span>
-            </div>
-          </div>
-
-          {/* Side-by-Side Content: Words on Left, Image Card on Right Side */}
-          <div className="flex items-start justify-between gap-3 sm:gap-5">
-            {/* Left Words that dynamically change */}
-            <div className="flex-1 min-w-0 space-y-2">
-              <div key={activeDestination.id} className="animate-in fade-in duration-300 space-y-1">
-                <h1 className="text-2xl sm:text-4xl font-black font-display tracking-tight text-white uppercase drop-shadow-sm leading-tight line-clamp-2">
-                  {activeDestination.name}
-                </h1>
-                <p className="text-xs sm:text-base text-slate-200 font-script font-bold tracking-wide">
-                  Discover Amazing <span className="text-[#cbb72c] underline decoration-[#3482a4] decoration-wavy decoration-1 underline-offset-2">Journeys</span>
-                </p>
-              </div>
-
-              {/* Price & Duration Quick Tag */}
-              <div className="flex flex-wrap items-center gap-2 pt-0.5">
-                <div className="flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-xl border border-white/15 text-xs">
-                  <span className="text-slate-400 text-[11px]">From</span>
-                  <span className="font-extrabold text-[#cbb72c] font-display">{formattedPrice}</span>
-                </div>
-                <div className="flex items-center gap-1 bg-black/60 backdrop-blur-md px-2 py-1 rounded-xl border border-white/15 text-[11px] text-slate-300">
-                  <Compass className="w-3 h-3 text-[#3482a4] shrink-0" />
-                  <span className="truncate">{activeDestination.duration}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Side Image Card on Mobile (Pinned to the Right, NOT in Center) */}
-            <div className="shrink-0 flex justify-end">
-              <div 
-                key={activeDestination.id}
-                onClick={() => onExploreDestination(activeDestination)}
-                className="group relative w-32 sm:w-44 aspect-[4/5] rounded-2xl overflow-hidden bg-slate-950 border-2 border-white/20 hover:border-[#3482a4] shadow-2xl shadow-black/90 active:scale-95 transition-all cursor-pointer animate-in fade-in"
-                title={`Click to view ${activeDestination.name} details`}
-              >
-                <img
-                  src={activeDestination.image}
-                  alt={`${activeDestination.name} trip poster`}
-                  className="w-full h-full object-contain bg-slate-950"
-                  referrerPolicy="no-referrer"
-                />
-
-                {/* Badge and Save Button */}
-                <div className="absolute top-2 left-2 right-2 flex items-center justify-between pointer-events-none">
-                  {activeDestination.badge ? (
-                    <span className="text-[9px] font-bold text-slate-950 bg-[#cbb72c] px-1.5 py-0.5 rounded-full shadow-md">
-                      {activeDestination.badge}
-                    </span>
-                  ) : (
-                    <span />
-                  )}
-
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onToggleSave(activeDestination.id);
-                    }}
-                    className="pointer-events-auto p-1 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md transition-colors cursor-pointer shadow-md"
-                    title={isSaved ? 'Remove from Saved' : 'Save Trip'}
-                  >
-                    <Heart className={`w-3 h-3 ${isSaved ? 'fill-rose-500 text-rose-500' : 'text-white'}`} />
-                  </button>
-                </div>
-
-                <div className="absolute inset-x-0 bottom-0 p-1.5 bg-gradient-to-t from-black/90 to-transparent flex items-center justify-center">
-                  <span className="text-[9.5px] font-bold text-slate-300">Tap to View</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Descriptive Narrative on Mobile */}
-          <p key={`desc-${activeDestination.id}`} className="text-xs sm:text-sm text-slate-200/90 leading-relaxed font-light line-clamp-2 animate-in fade-in duration-300">
-            {activeDestination.description}
-          </p>
-
-          {/* Mobile CTAs */}
-          <div className="flex flex-wrap items-center gap-2 pt-1">
-            <button
-              onClick={() => onExploreDestination(activeDestination)}
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-white bg-[#3482a4] hover:bg-[#286b88] active:scale-95 rounded-full shadow-lg shadow-[#3482a4]/25 transition-all cursor-pointer"
-            >
-              <span>Explore Itinerary</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-            <button
-              onClick={onOpenPlanner}
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-slate-950 bg-[#cbb72c] hover:bg-[#b8a422] active:scale-95 rounded-full shadow-md shadow-[#cbb72c]/20 transition-all cursor-pointer"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-slate-950 fill-slate-950" />
-              <span>Plan Custom</span>
-            </button>
-          </div>
-
-          {/* Slider Controls on Mobile */}
-          <div className="flex items-center justify-between pt-2 border-t border-white/10 text-xs font-medium text-slate-300">
-            <div className="flex items-center gap-2">
-              <button
-                onClick={handlePrev}
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#3482a4] hover:text-white active:scale-90 flex items-center justify-center border border-white/20 transition-all cursor-pointer"
-                aria-label="Previous Destination"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button
-                onClick={handleNext}
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#3482a4] hover:text-white active:scale-90 flex items-center justify-center border border-white/20 transition-all cursor-pointer"
-                aria-label="Next Destination"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-              <div className="font-mono text-xs tracking-wider text-slate-300 ml-1">
-                <span className="font-bold text-[#cbb72c]">
-                  {String(currentIndex + 1).padStart(2, '0')}
-                </span>
-                <span className="mx-1 text-slate-500">/</span>
-                <span>{String(destinations.length).padStart(2, '0')}</span>
-              </div>
-            </div>
-
-            <button
-              onClick={() => setIsAutoplay(!isAutoplay)}
-              className="flex items-center gap-1 text-[11px] text-slate-400 hover:text-white px-2 py-1 rounded-lg bg-black/40 border border-white/10 transition-colors cursor-pointer"
-              title={isAutoplay ? 'Pause auto-sliding' : 'Resume auto-sliding'}
-            >
-              {isAutoplay ? <Pause className="w-3 h-3 text-[#3482a4]" /> : <Play className="w-3 h-3 text-[#cbb72c]" />}
-              <span>{isAutoplay ? 'Autoplay' : 'Paused'}</span>
-            </button>
-          </div>
         </div>
       </div>
     </section>

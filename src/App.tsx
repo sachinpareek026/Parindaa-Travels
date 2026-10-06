@@ -15,7 +15,6 @@ import { Footer } from './components/Footer';
 import { ItineraryModal } from './components/ItineraryModal';
 import { TripPlannerModal } from './components/TripPlannerModal';
 import { SavedTripsDrawer } from './components/SavedTripsDrawer';
-import { PolicyModal, PolicyType } from './components/PolicyModal';
 import { MessageSquare, Heart, Sparkles } from 'lucide-react';
 
 export default function App() {
@@ -24,37 +23,9 @@ export default function App() {
   const [selectedItinerary, setSelectedItinerary] = useState<Destination | null>(null);
   const [isPlannerOpen, setIsPlannerOpen] = useState(false);
   const [isSavedDrawerOpen, setIsSavedDrawerOpen] = useState(false);
-  const [isPolicyOpen, setIsPolicyOpen] = useState(false);
-  const [activePolicy, setActivePolicy] = useState<PolicyType>('privacy');
   const [savedIds, setSavedIds] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [toastMessage, setToastMessage] = useState<string | null>(null);
-
-  // Direct policy open handler
-  const handleOpenPolicy = (type: PolicyType) => {
-    setActivePolicy(type);
-    setIsPolicyOpen(true);
-  };
-
-  // Check URL hash for direct links (e.g., #privacy-policy, #cancellation-policy)
-  useEffect(() => {
-    const handleHash = () => {
-      const hash = window.location.hash.toLowerCase();
-      if (hash === '#privacy' || hash === '#privacy-policy') {
-        handleOpenPolicy('privacy');
-      } else if (hash === '#cancellation' || hash === '#cancellation-policy' || hash === '#refund-policy') {
-        handleOpenPolicy('cancellation');
-      } else if (hash === '#safety' || hash === '#safety-guidelines') {
-        handleOpenPolicy('safety');
-      } else if (hash === '#terms' || hash === '#terms-of-service') {
-        handleOpenPolicy('terms');
-      }
-    };
-
-    handleHash();
-    window.addEventListener('hashchange', handleHash);
-    return () => window.removeEventListener('hashchange', handleHash);
-  }, []);
 
   // Load and persist savedIds
   useEffect(() => {
@@ -198,7 +169,7 @@ export default function App() {
       </main>
 
       {/* Comprehensive Footer */}
-      <Footer onSelectNav={handleSelectNav} onOpenPolicy={handleOpenPolicy} />
+      <Footer onSelectNav={handleSelectNav} />
 
       {/* Floating WhatsApp Quick Connect Button to Official Number */}
       <div className="fixed bottom-6 right-6 z-40 flex items-center gap-2">
@@ -249,19 +220,6 @@ export default function App() {
         onRemove={handleToggleSave}
         onExplore={(dest) => setSelectedItinerary(dest)}
         currency={currency}
-      />
-
-      {/* Official Legal & Policies Modal (Privacy, Cancellation, Safety, Terms) */}
-      <PolicyModal
-        isOpen={isPolicyOpen}
-        onClose={() => {
-          setIsPolicyOpen(false);
-          // Clean up hash if present
-          if (window.location.hash.includes('policy') || window.location.hash.includes('terms') || window.location.hash.includes('safety') || window.location.hash.includes('privacy') || window.location.hash.includes('cancellation')) {
-            window.history.pushState(null, '', window.location.pathname);
-          }
-        }}
-        initialPolicy={activePolicy}
       />
 
     </div>

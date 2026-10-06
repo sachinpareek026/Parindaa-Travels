@@ -32,9 +32,6 @@ export interface Destination {
     meals: string;
     stay: string;
   }[];
-  bestTimeToVisit: string;
-  isTopOctDecTrip?: boolean;
-  seasonBadge?: string;
 }
 
 export interface Review {
@@ -60,162 +57,6 @@ export interface InstagramPost {
 
 export const DESTINATIONS: Destination[] = [
   {
-    id: 'kashmir-gulmarg',
-    name: 'Kashmir - Gulmarg',
-    country: 'India',
-    region: 'Kashmir Valley, North India',
-    tagline: 'Gulmarg Gondola · Apharwat Peak 13,780 ft · Dal Lake · Drung Waterfall',
-    description: 'Ascend into a winter wonderland! Ride the world’s second-highest operating cable car up to Apharwat Peak at 13,780 ft, ski through powder snow meadows in Gulmarg, visit the frozen Drung waterfall, and stay on heritage Dal Lake houseboats.',
-    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791223245/splitimage.im-2_6.png',
-    heroImage: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=2000&q=85',
-    secondaryImages: [
-      'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80',
-    ],
-    priceINR: 13999,
-    priceUSD: 175,
-    duration: '5 Days / 4 Nights',
-    rating: 4.98,
-    reviewCount: 390,
-    badge: 'Parindaa Special',
-    category: 'himalayan',
-    bestTimeToVisit: 'October to December (Peak Snow & Autumn Vibes)',
-    isTopOctDecTrip: true,
-    seasonBadge: '🏆 #1 Best Trip: Oct to Dec',
-    highlights: [
-      'Gulmarg Gondola Phase 1 (Kongdoori) & Phase 2 (Apharwat 13,780 ft)',
-      'Drung Frozen Waterfall & Tangmarg Pine Forest Valley',
-      'Beginner Snow Skiing & Sledge Experience on Powder Slopes',
-      'Heritage Hand-Carved Houseboat Stay on Dal Lake with Shikara Ride',
-      'Cozy Bonfire & Authentic Kashmiri Kahwa & Wazwan Dinners'
-    ],
-    inclusions: [
-      'Deluxe Snow Resorts in Gulmarg / Tangmarg & Dal Lake Houseboat',
-      'Daily Traditional Kashmiri Breakfast & Hot Wazwan Dinners',
-      'Private Chauffeur-driven AC/Heated Tempo Traveler throughout',
-      'Dedicated Parindaa Trip Captain & Certified Mountain Guide',
-      'All Tolls, Parking, Driver Charges & Union Clearances'
-    ],
-    exclusions: [
-      'Flight to Srinagar (SXR)',
-      'Gondola cable car ride tickets (Phase 1 & 2 can be arranged)',
-      'Personal winter jacket/snow boot rental (~₹250/day)',
-      'Personal snowmobile / ATV rides'
-    ],
-    departureDates: ['17 Oct 2026', '24 Oct 2026', '07 Nov 2026', '21 Nov 2026', '05 Dec 2026', '19 Dec 2026'],
-    itinerary: [
-      { day: 1, title: 'Srinagar Arrival & Heritage Dal Lake Houseboat Experience', details: 'Touchdown in Srinagar. Check into your wooden carved heritage houseboat on Dal Lake. Enjoy a sunset shikara ride through floating markets and Char Chinar.', meals: 'Dinner Included', stay: 'Dal Lake Heritage Houseboat' },
-      { day: 2, title: 'Scenic Drive to Gulmarg & Drung Frozen Waterfall', details: 'Drive past snow-dusted apple orchards to Tangmarg. Trek to the spectacular frozen Drung waterfall with ice stalactites. Check into Gulmarg snow resort.', meals: 'Breakfast & Dinner', stay: 'Pine View Snow Resort, Gulmarg' },
-      { day: 3, title: 'Apharwat Peak Gondola Cable Car & Snow Sports', details: 'Board the world-famous Gulmarg Gondola up to Phase 1 Kongdoori and Phase 2 Apharwat Peak (13,780 ft) for surreal 360-degree Himalayan snow views and skiing.', meals: 'Breakfast & Dinner', stay: 'Pine View Snow Resort, Gulmarg' },
-      { day: 4, title: 'Gulmarg Snow Meadows to Srinagar Heritage Walk', details: 'Morning sledging and snow photography in Gulmarg bowl. Drive back to Srinagar for a walk through historic Old City, Jamia Masjid, and spice bazaars.', meals: 'Breakfast & Dinner', stay: 'Deluxe Boutique Hotel, Srinagar' },
-      { day: 5, title: 'Warm Kahwa Breakfast & Airport Farewell', details: 'Sip hot saffron Kashmiri Kahwa with Girda bread breakfast before timely drop-off at Srinagar Airport for your return flight.', meals: 'Breakfast Included', stay: 'Departure' },
-    ]
-  },
-  {
-    id: 'andaman-island-odyssey',
-    name: 'Andaman Island Odyssey',
-    country: 'India',
-    region: 'Andaman & Nicobar Islands',
-    tagline: 'Port Blair · Havelock Island · Radhanagar Beach · Neil Island',
-    description: 'Dive into crystal-turquoise lagoons, sail across the Bay of Bengal on high-speed catamarans, walk white coral beaches of Havelock, and witness breathtaking sunsets at Radhanagar Beach.',
-    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791318534/SaveClip.App_728243718_17916647766398063_7418744831974953095_n.webp',
-    heroImage: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=2000&q=85',
-    secondaryImages: [
-      'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
-    ],
-    priceINR: 18999,
-    priceUSD: 235,
-    duration: '6 Days / 5 Nights',
-    rating: 4.96,
-    reviewCount: 284,
-    badge: 'Bestseller',
-    category: 'adventure',
-    bestTimeToVisit: 'October to December (Calm Azure Seas & Corals)',
-    isTopOctDecTrip: true,
-    seasonBadge: '🌊 Top Island Trip: Oct to Dec',
-    highlights: [
-      'Radhanagar Beach Sunset (Ranked Asia’s #1 Best Beach)',
-      'Elephant Beach Snorkeling & Coral Reef Water Adventures',
-      'Private High-Speed Catamaran Cruise between Islands',
-      'Historic Cellular Jail Light & Sound Show',
-      'Natural Rock Bridge & Laxmanpur Beach at Neil Island'
-    ],
-    inclusions: [
-      'Boutique Beachside Resort Stays in Port Blair & Havelock',
-      'Inter-Island Luxury Catamaran Cruise Tickets (Makruzz / Green Ocean)',
-      'Daily Buffet Breakfast & Coastal Dinners',
-      'Private AC Vehicles for all Transfers & Sightseeing',
-      'Dedicated Parindaa Trip Captain & Certified Water Marshals'
-    ],
-    exclusions: [
-      'Flights to/from Port Blair Veer Savarkar Airport (IXZ)',
-      'Optional Scuba Diving or Sea Kart sessions (can be booked via Captain)',
-      'Personal watersports at Elephant Beach',
-      'Camera permits and personal expenses'
-    ],
-    departureDates: ['18 Oct 2026', '28 Oct 2026', '11 Nov 2026', '25 Nov 2026', '09 Dec 2026', '23 Dec 2026'],
-    itinerary: [
-      { day: 1, title: 'Arrival in Port Blair & Cellular Jail Memorial', details: 'Touchdown at Port Blair Airport and meet your Parindaa Captain. Check in to coastal resort. Visit historic Cellular Jail followed by the stirring evening Light & Sound presentation.', meals: 'Dinner Included', stay: 'Sea Shell Resort / Boutique Stay, Port Blair' },
-      { day: 2, title: 'Port Blair to Havelock Island via Catamaran', details: 'Board morning high-speed catamaran cruise across the azure Andaman Sea. Check into Havelock beachside cottages. Evening sunset at world-acclaimed Radhanagar Beach (Beach No. 7).', meals: 'Breakfast & Dinner', stay: 'Havelock Island Beach Resort' },
-      { day: 3, title: 'Elephant Beach Coral Reef Exploration & Water Sports', details: 'Speedboat ride to Elephant Beach. Snorkel through living coral reefs with tropical clownfish, or experience optional scuba diving, jet skiing, and sea walking.', meals: 'Breakfast & Dinner', stay: 'Havelock Island Beach Resort' },
-      { day: 4, title: 'Havelock to Neil Island (Shaheed Dweep)', details: 'Cruise to serene Neil Island. Visit Bharatpur Beach with turquoise shallow waters, the natural coral bridge formation, and watch golden sunset at Laxmanpur Beach.', meals: 'Breakfast & Dinner', stay: 'Neil Island Eco Resort' },
-      { day: 5, title: 'Neil Island to Port Blair & Chidiya Tapu Sunset', details: 'Catch morning catamaran return to Port Blair. Afternoon scenic coastal drive to Chidiya Tapu (Bird Island) for an unforgettable sunset over the Bay of Bengal.', meals: 'Breakfast & Dinner', stay: 'Boutique Resort, Port Blair' },
-      { day: 6, title: 'Farewell Andaman & Journey Home', details: 'Enjoy morning tropical breakfast and fresh tender coconut before airport transfer with lifelong memories and group photos.', meals: 'Breakfast Included', stay: 'Departure' },
-    ]
-  },
-  {
-    id: 'kerala-gods-own-country',
-    name: 'Kerala: God’s Own Country',
-    country: 'India',
-    region: 'South India',
-    tagline: 'Munnar 2D · Thekkady · Alleppey Houseboat · Kanyakumari',
-    description: 'Immerse in velvet emerald tea estates in Munnar, spice hills in Thekkady, an authentic overnight houseboat cruise in Alleppey backwaters, and Kanyakumari coastal sunrise.',
-    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220482/724061399_17915593464398063_5564154880270854714_n.webp',
-    heroImage: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=2000&q=85',
-    secondaryImages: [
-      'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80',
-    ],
-    priceINR: 9999,
-    priceUSD: 129,
-    duration: '5D/4N (or 7D/6N Classical)',
-    rating: 4.94,
-    reviewCount: 362,
-    badge: 'Trending',
-    category: 'tropical',
-    bestTimeToVisit: 'October to December (Lush Post-Monsoon & Backwaters)',
-    isTopOctDecTrip: true,
-    seasonBadge: '🌴 Top Tropical Trip: Oct to Dec',
-    highlights: [
-      'Overnight Private Houseboat Cruise in Alleppey Backwaters',
-      'Munnar Tea Gardens, Lockhart Estate & Mattupetty Dam',
-      'Thekkady Periyar Wildlife & Organic Spice Garden Tour',
-      'Traditional Kerala Sadya Feast served on Banana Leaf',
-      'Optional Extension to Kanyakumari Sunset & Rameshwaram'
-    ],
-    inclusions: [
-      '4-Star Hill Resort in Munnar & Deluxe Private Houseboat',
-      'All Meals on Houseboat (Lunch, High Tea, Dinner, Breakfast)',
-      'Daily Hotel Buffet Breakfast',
-      'Chauffeured Private AC Sedan / Tempo Traveler throughout',
-      'Spice Plantation Guided Tour & Entry Permits'
-    ],
-    exclusions: [
-      'Flight or Train to Kochi (COK)',
-      'Kathakali / Kalaripayattu theater tickets (~₹300)',
-      'Personal Ayurvedic wellness massages',
-      'Personal purchases of spices and banana chips'
-    ],
-    departureDates: ['19 Oct 2026', '29 Oct 2026', '10 Nov 2026', '24 Nov 2026', '08 Dec 2026'],
-    itinerary: [
-      { day: 1, title: 'Arrival at Kochi to Misty Munnar Hills', details: 'Meet your Parindaa host at Cochin. Drive past Cheeyappara & Valara waterfalls into the misty tea carpet hills of Munnar.', meals: 'Dinner Included', stay: 'Tea Valley Resort, Munnar' },
-      { day: 2, title: 'Munnar Tea Exploration & Eravikulam', details: 'Visit Eravikulam National Park to spot Nilgiri Tahr. Explore Lockhart Tea Factory and echo point at Mattupetty dam.', meals: 'Breakfast & Dinner', stay: 'Tea Valley Resort, Munnar' },
-      { day: 3, title: 'Munnar to Thekkady Spice Hills', details: 'Drive to Thekkady. Take a guided aromatic spice garden walk smelling cardamom and cinnamon, followed by martial arts show.', meals: 'Breakfast & Dinner', stay: 'Green Mist Retreat, Thekkady' },
-      { day: 4, title: 'Alleppey Backwaters Houseboat Cruise', details: 'Board your private handcrafted houseboat at noon. Glide through palm-fringed lagoons while savoring freshly prepared Karimeen fish.', meals: 'Breakfast, Lunch & Dinner', stay: 'Private Houseboat, Alleppey' },
-      { day: 5, title: 'Fort Kochi Heritage & Farewell Kerala', details: 'Morning backwater sunrise breakfast. Visit Chinese fishing nets in Fort Kochi before transfer to Cochin Airport.', meals: 'Breakfast Included', stay: 'Departure' },
-    ]
-  },
-  {
     id: 'meghalaya-unseen',
     name: 'Unseen Meghalaya',
     country: 'India',
@@ -233,9 +74,8 @@ export const DESTINATIONS: Destination[] = [
     duration: '5 Days / 6 Nights',
     rating: 4.96,
     reviewCount: 312,
-    badge: 'Popular',
+    badge: 'Bestseller',
     category: 'adventure',
-    bestTimeToVisit: 'October to April (Caves & Clear Waterfall Pools)',
     highlights: [
       '13+ Scenic Waterfalls including Nohkalikai & Krang Shuri',
       '7 Limestone Caves Exploration (Mawsmai, Arwah & Krem Puri)',
@@ -285,7 +125,6 @@ export const DESTINATIONS: Destination[] = [
     reviewCount: 428,
     badge: 'Bestseller',
     category: 'himalayan',
-    bestTimeToVisit: 'October to December (Golden Chinar Foliage & Winter Chill)',
     highlights: [
       'Gulmarg Gondola Phase 1 & 2 Cable Car Ride',
       'Sunset Shikara Cruise on Dal Lake & Char Chinar',
@@ -335,7 +174,6 @@ export const DESTINATIONS: Destination[] = [
     reviewCount: 245,
     badge: 'Divine Yatra',
     category: 'spiritual',
-    bestTimeToVisit: 'October to March (Pleasant Temple Weather)',
     highlights: [
       'Grishneshwar Jyotirlinga (12th Sacred Jyotirlinga)',
       'Bhimashankar Jyotirlinga in Western Ghats Sahyadri Hills',
@@ -384,7 +222,6 @@ export const DESTINATIONS: Destination[] = [
     reviewCount: 380,
     badge: 'Popular',
     category: 'weekend',
-    bestTimeToVisit: 'All Year / Oct to Nov (Serene Foothill Weather)',
     highlights: [
       'Kainchi Dham Neem Karoli Baba Ashram Darshan & Meditation',
       'Chauli Ki Jali Cliff Point & Mukteshwar Dham Temple',
@@ -428,9 +265,8 @@ export const DESTINATIONS: Destination[] = [
     duration: '5 Days / 4 Nights',
     rating: 4.92,
     reviewCount: 310,
-    badge: 'Popular',
+    badge: 'Trending',
     category: 'adventure',
-    bestTimeToVisit: 'October to February (Sunny Coastal Breeze)',
     highlights: [
       'Dudhsagar Waterfalls 4x4 Jeep Safari & Swim',
       'Both North (Anjuna, Vagator) and South Goa (Palolem, Cola) Beaches',
@@ -477,9 +313,8 @@ export const DESTINATIONS: Destination[] = [
     duration: '7 Days / 6 Nights',
     rating: 4.98,
     reviewCount: 450,
-    badge: 'Popular',
+    badge: 'Parindaa Special',
     category: 'himalayan',
-    bestTimeToVisit: 'May to October (Open High Mountain Passes)',
     highlights: [
       'Umling La Pass (19,024 ft) - Highest Motorable Road in the World',
       'Pangong Tso Lake Camping under Galactic Stars',
@@ -495,7 +330,7 @@ export const DESTINATIONS: Destination[] = [
       'All Inner Line Permits, Wildlife & Environmental Fees'
     ],
     exclusions: [
-      'Flights to/from Leh Kushok Bakula Airport (IXZ)',
+      'Flights to/from Leh Kushok Bakula Airport (IXL)',
       'Fuel for bikes (if taking bike package)',
       'Personal riding gear & security deposit',
       'Lunches during daily rides'
@@ -510,6 +345,153 @@ export const DESTINATIONS: Destination[] = [
       { day: 6, title: 'Pangong to Hanle & Umling La Summit Push', details: 'Early ascent to Umling La (19,024 ft), the rooftop of the world. Celebrate triumph before returning to Leh through Chang La.', meals: 'Breakfast & Dinner', stay: 'Grand Heritage Hotel, Leh' },
       { day: 7, title: 'Departure with the Badge of a True Parinda', details: 'Transfer to Leh Airport with unforgettable memories of the ultimate Himalayan expedition.', meals: 'Breakfast Included', stay: 'Departure' },
     ]
+  },
+  {
+    id: 'kerala-gods-own-country',
+    name: 'Kerala: God’s Own Country',
+    country: 'India',
+    region: 'South India',
+    tagline: 'Munnar 2D · Thekkady · Alleppey Houseboat · Kanyakumari',
+    description: 'Immerse in velvet emerald tea estates in Munnar, spice hills in Thekkady, an authentic overnight houseboat cruise in Alleppey backwaters, and Kanyakumari coastal sunrise.',
+    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220482/724061399_17915593464398063_5564154880270854714_n.webp',
+    heroImage: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=2000&q=85',
+    secondaryImages: [
+      'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80',
+    ],
+    priceINR: 9999,
+    priceUSD: 129,
+    duration: '5D/4N (or 7D/6N Classical)',
+    rating: 4.94,
+    reviewCount: 362,
+    badge: 'Popular',
+    category: 'tropical',
+    highlights: [
+      'Overnight Private Houseboat Cruise in Alleppey Backwaters',
+      'Munnar Tea Gardens, Lockhart Estate & Mattupetty Dam',
+      'Thekkady Periyar Wildlife & Organic Spice Garden Tour',
+      'Traditional Kerala Sadya Feast served on Banana Leaf',
+      'Optional Extension to Kanyakumari Sunset & Rameshwaram'
+    ],
+    inclusions: [
+      '4-Star Hill Resort in Munnar & Deluxe Private Houseboat',
+      'All Meals on Houseboat (Lunch, High Tea, Dinner, Breakfast)',
+      'Daily Hotel Buffet Breakfast',
+      'Chauffeured Private AC Sedan / Tempo Traveler throughout',
+      'Spice Plantation Guided Tour & Entry Permits'
+    ],
+    exclusions: [
+      'Flight or Train to Kochi (COK)',
+      'Kathakali / Kalaripayattu theater tickets (~₹300)',
+      'Personal Ayurvedic wellness massages',
+      'Personal purchases of spices and banana chips'
+    ],
+    departureDates: ['19 Oct 2026', '29 Oct 2026', '10 Nov 2026', '24 Nov 2026', '08 Dec 2026'],
+    itinerary: [
+      { day: 1, title: 'Arrival at Kochi to Misty Munnar Hills', details: 'Meet your Parindaa host at Cochin. Drive past Cheeyappara & Valara waterfalls into the misty tea carpet hills of Munnar.', meals: 'Dinner Included', stay: 'Tea Valley Resort, Munnar' },
+      { day: 2, title: 'Munnar Tea Exploration & Eravikulam', details: 'Visit Eravikulam National Park to spot Nilgiri Tahr. Explore Lockhart Tea Factory and echo point at Mattupetty dam.', meals: 'Breakfast & Dinner', stay: 'Tea Valley Resort, Munnar' },
+      { day: 3, title: 'Munnar to Thekkady Spice Hills', details: 'Drive to Thekkady. Take a guided aromatic spice garden walk smelling cardamom and cinnamon, followed by martial arts show.', meals: 'Breakfast & Dinner', stay: 'Green Mist Retreat, Thekkady' },
+      { day: 4, title: 'Alleppey Backwaters Houseboat Cruise', details: 'Board your private handcrafted houseboat at noon. Glide through palm-fringed lagoons while savoring freshly prepared Karimeen fish.', meals: 'Breakfast, Lunch & Dinner', stay: 'Private Houseboat, Alleppey' },
+      { day: 5, title: 'Fort Kochi Heritage & Farewell Kerala', details: 'Morning backwater sunrise breakfast. Visit Chinese fishing nets in Fort Kochi before transfer to Cochin Airport.', meals: 'Breakfast Included', stay: 'Departure' },
+    ]
+  },
+  {
+    id: 'andaman-island-odyssey',
+    name: 'Andaman Island Odyssey',
+    country: 'India',
+    region: 'Andaman & Nicobar Islands',
+    tagline: 'Port Blair · Havelock Island · Radhanagar Beach · Neil Island',
+    description: 'Dive into crystal-turquoise lagoons, sail across the Bay of Bengal on high-speed catamarans, walk white coral beaches of Havelock, and witness breathtaking sunsets at Radhanagar Beach.',
+    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791318534/SaveClip.App_728243718_17916647766398063_7418744831974953095_n.webp',
+    heroImage: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=2000&q=85',
+    secondaryImages: [
+      'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+    ],
+    priceINR: 18999,
+    priceUSD: 235,
+    duration: '6 Days / 5 Nights',
+    rating: 4.96,
+    reviewCount: 284,
+    badge: 'Trending',
+    category: 'adventure',
+    highlights: [
+      'Radhanagar Beach Sunset (Ranked Asia’s #1 Best Beach)',
+      'Elephant Beach Snorkeling & Coral Reef Water Adventures',
+      'Private High-Speed Catamaran Cruise between Islands',
+      'Historic Cellular Jail Light & Sound Show',
+      'Natural Rock Bridge & Laxmanpur Beach at Neil Island'
+    ],
+    inclusions: [
+      'Boutique Beachside Resort Stays in Port Blair & Havelock',
+      'Inter-Island Luxury Catamaran Cruise Tickets (Makruzz / Green Ocean)',
+      'Daily Buffet Breakfast & Coastal Dinners',
+      'Private AC Vehicles for all Transfers & Sightseeing',
+      'Dedicated Parindaa Trip Captain & Certified Water Marshals'
+    ],
+    exclusions: [
+      'Flights to/from Port Blair Veer Savarkar Airport (IXZ)',
+      'Optional Scuba Diving or Sea Kart sessions (can be booked via Captain)',
+      'Personal watersports at Elephant Beach',
+      'Camera permits and personal expenses'
+    ],
+    departureDates: ['18 Oct 2026', '28 Oct 2026', '11 Nov 2026', '25 Nov 2026', '09 Dec 2026', '23 Dec 2026'],
+    itinerary: [
+      { day: 1, title: 'Arrival in Port Blair & Cellular Jail Memorial', details: 'Touchdown at Port Blair Airport and meet your Parindaa Captain. Check in to coastal resort. Visit historic Cellular Jail followed by the stirring evening Light & Sound presentation.', meals: 'Dinner Included', stay: 'Sea Shell Resort / Boutique Stay, Port Blair' },
+      { day: 2, title: 'Port Blair to Havelock Island via Catamaran', details: 'Board morning high-speed catamaran cruise across the azure Andaman Sea. Check into Havelock beachside cottages. Evening sunset at world-acclaimed Radhanagar Beach (Beach No. 7).', meals: 'Breakfast & Dinner', stay: 'Havelock Island Beach Resort' },
+      { day: 3, title: 'Elephant Beach Coral Reef Exploration & Water Sports', details: 'Speedboat ride to Elephant Beach. Snorkel through living coral reefs with tropical clownfish, or experience optional scuba diving, jet skiing, and sea walking.', meals: 'Breakfast & Dinner', stay: 'Havelock Island Beach Resort' },
+      { day: 4, title: 'Havelock to Neil Island (Shaheed Dweep)', details: 'Cruise to serene Neil Island. Visit Bharatpur Beach with turquoise shallow waters, the natural coral bridge formation, and watch golden sunset at Laxmanpur Beach.', meals: 'Breakfast & Dinner', stay: 'Neil Island Eco Resort' },
+      { day: 5, title: 'Neil Island to Port Blair & Chidiya Tapu Sunset', details: 'Catch morning catamaran return to Port Blair. Afternoon scenic coastal drive to Chidiya Tapu (Bird Island) for an unforgettable sunset over the Bay of Bengal.', meals: 'Breakfast & Dinner', stay: 'Boutique Resort, Port Blair' },
+      { day: 6, title: 'Farewell Andaman & Journey Home', details: 'Enjoy morning tropical breakfast and fresh tender coconut before airport transfer with lifelong memories and group photos.', meals: 'Breakfast Included', stay: 'Departure' },
+    ]
+  },
+  {
+    id: 'kashmir-gulmarg',
+    name: 'Kashmir - Gulmarg',
+    country: 'India',
+    region: 'Kashmir Valley, North India',
+    tagline: 'Gulmarg Gondola · Apharwat Peak 13,780 ft · Dal Lake · Drung Waterfall',
+    description: 'Ascend into a winter wonderland! Ride the world’s second-highest operating cable car up to Apharwat Peak at 13,780 ft, ski through powder snow meadows in Gulmarg, visit the frozen Drung waterfall, and stay on heritage Dal Lake houseboats.',
+    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791223245/splitimage.im-2_6.png',
+    heroImage: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=2000&q=85',
+    secondaryImages: [
+      'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80',
+    ],
+    priceINR: 13999,
+    priceUSD: 175,
+    duration: '5 Days / 4 Nights',
+    rating: 4.98,
+    reviewCount: 390,
+    badge: 'Trending',
+    category: 'himalayan',
+    highlights: [
+      'Gulmarg Gondola Phase 1 (Kongdoori) & Phase 2 (Apharwat 13,780 ft)',
+      'Drung Frozen Waterfall & Tangmarg Pine Forest Valley',
+      'Beginner Snow Skiing & Sledge Experience on Powder Slopes',
+      'Heritage Hand-Carved Houseboat Stay on Dal Lake with Shikara Ride',
+      'Cozy Bonfire & Authentic Kashmiri Kahwa & Wazwan Dinners'
+    ],
+    inclusions: [
+      'Deluxe Snow Resorts in Gulmarg / Tangmarg & Dal Lake Houseboat',
+      'Daily Traditional Kashmiri Breakfast & Hot Wazwan Dinners',
+      'Private Chauffeur-driven AC/Heated Tempo Traveler throughout',
+      'Dedicated Parindaa Trip Captain & Certified Mountain Guide',
+      'All Tolls, Parking, Driver Charges & Union Clearances'
+    ],
+    exclusions: [
+      'Flight to Srinagar (SXR)',
+      'Gondola cable car ride tickets (Phase 1 & 2 can be arranged)',
+      'Personal winter jacket/snow boot rental (~₹250/day)',
+      'Personal snowmobile / ATV rides'
+    ],
+    departureDates: ['17 Oct 2026', '24 Oct 2026', '07 Nov 2026', '21 Nov 2026', '05 Dec 2026', '19 Dec 2026'],
+    itinerary: [
+      { day: 1, title: 'Srinagar Arrival & Heritage Dal Lake Houseboat Experience', details: 'Touchdown in Srinagar. Check into your wooden carved heritage houseboat on Dal Lake. Enjoy a sunset shikara ride through floating markets and Char Chinar.', meals: 'Dinner Included', stay: 'Dal Lake Heritage Houseboat' },
+      { day: 2, title: 'Scenic Drive to Gulmarg & Drung Frozen Waterfall', details: 'Drive past snow-dusted apple orchards to Tangmarg. Trek to the spectacular frozen Drung waterfall with ice stalactites. Check into Gulmarg snow resort.', meals: 'Breakfast & Dinner', stay: 'Pine View Snow Resort, Gulmarg' },
+      { day: 3, title: 'Apharwat Peak Gondola Cable Car & Snow Sports', details: 'Board the world-famous Gulmarg Gondola up to Phase 1 Kongdoori and Phase 2 Apharwat Peak (13,780 ft) for surreal 360-degree Himalayan snow views and skiing.', meals: 'Breakfast & Dinner', stay: 'Pine View Snow Resort, Gulmarg' },
+      { day: 4, title: 'Gulmarg Snow Meadows to Srinagar Heritage Walk', details: 'Morning sledging and snow photography in Gulmarg bowl. Drive back to Srinagar for a walk through historic Old City, Jamia Masjid, and spice bazaars.', meals: 'Breakfast & Dinner', stay: 'Deluxe Boutique Hotel, Srinagar' },
+      { day: 5, title: 'Warm Kahwa Breakfast & Airport Farewell', details: 'Sip hot saffron Kashmiri Kahwa with Girda bread breakfast before timely drop-off at Srinagar Airport for your return flight.', meals: 'Breakfast Included', stay: 'Departure' },
+    ]
   }
 ];
 
@@ -518,66 +500,66 @@ export const REVIEWS: Review[] = [
     id: 'rev-1',
     author: 'Aarav Malhotra',
     location: 'Mumbai, Maharashtra',
-    avatar: '/avatars/aarav-malhotra.jpg',
-    trip: 'Kashmir - Gulmarg (5D/4N)',
+    avatar: 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=300&q=80',
+    trip: 'Unseen Meghalaya (5D/6N)',
     rating: 5,
-    date: 'October 2026',
-    comment: 'Ascending Apharwat Peak on the Gulmarg Gondola at 13,780 ft with Parindaa was the ultimate experience of my life! The autumn crisp air and snow slopes were magical. Our trip captain arranged every single permit and gear smoothly.',
+    date: 'September 2026',
+    comment: 'The 13+ waterfalls and living root bridges in Meghalaya with Parindaa Travels were beyond words. Our captain made sure every single trek and cave was safe and exhilarating. Truly felt like family!',
     verified: true
   },
   {
     id: 'rev-2',
     author: 'Neha Sharma',
     location: 'New Delhi, India',
-    avatar: '/avatars/neha-sharma.jpg',
-    trip: 'Andaman Island Odyssey (6D/5N)',
+    avatar: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=300&q=80',
+    trip: 'Kashmir: City of Love (6D/5N)',
     rating: 5,
-    date: 'October 2026',
-    comment: 'Radhanagar Beach sunset in Havelock and coral snorkeling at Elephant Beach was a pure dream come true! October seas were crystal calm and turquoise. Parindaa took care of all luxury catamarans and island transfers flawlessly.',
+    date: 'August 2026',
+    comment: 'From the Shikara ride on Dal Lake to the Gulmarg Gondola Phase 2, everything was organized to perfection. Parindaa provided the best rates, top safety, and genuine local hospitality.',
     verified: true
   },
   {
     id: 'rev-3',
     author: 'Rohan Deshmukh',
     location: 'Pune, Maharashtra',
-    avatar: '/avatars/rohan-deshmukh.jpg',
-    trip: "Kerala: God's Own Country (5D/4N)",
+    avatar: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=300&q=80',
+    trip: 'Leh Ladakh Expedition (7D/6N)',
     rating: 5,
-    date: 'September 2026',
-    comment: 'Munnar mist tea hills and the private luxury houseboat in Alleppey backwaters were surreal. The captain treated our group like family. Top hygiene, peaceful stays and delicious authentic Sadya feast!',
+    date: 'July 2026',
+    comment: 'Reaching Umling La (19,024 ft) with Parindaa marshals was the crowning moment of my life! Flawless bikes, oxygen backup, and starry campfire nights at Pangong.',
     verified: true
   },
   {
     id: 'rev-4',
     author: 'Priya Iyer',
     location: 'Bengaluru, Karnataka',
-    avatar: '/avatars/priya-iyer.jpg',
-    trip: 'Unseen Meghalaya (5D/6N)',
+    avatar: 'https://images.unsplash.com/photo-1614289371518-722f2615943d?auto=format&fit=crop&w=300&q=80',
+    trip: 'Kainchi Dham & Mukteshwar Weekend',
     rating: 5,
-    date: 'September 2026',
-    comment: 'The 13+ waterfalls and living root bridges in Meghalaya with Parindaa Travels were beyond words. As a solo female traveler, safety and respect were paramount, and Parindaa delivered 100%!',
+    date: 'August 2026',
+    comment: 'A soul-healing weekend trip to Neem Karoli Baba Kainchi Dham. The AC luxury traveler and hill stays were super comfortable. Booked again for my parents!',
     verified: true
   },
   {
     id: 'rev-5',
     author: 'Vikramaditya Rathore',
     location: 'Jaipur, Rajasthan',
-    avatar: '/avatars/vikramaditya-rathore.jpg',
-    trip: 'Kainchi Dham & Mukteshwar Weekend',
+    avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80',
+    trip: 'Goa Beyond Beaches (4D/3N)',
     rating: 5,
-    date: 'August 2026',
-    comment: 'A soul-healing weekend trip to Neem Karoli Baba Kainchi Dham Ashram. The AC luxury traveler from Jaipur and mountain resort stays were super comfortable. Booked again for my parents!',
+    date: 'September 2026',
+    comment: 'Exploring hidden waterfalls and the vibrant Latin Quarter of Fontainhas with Parindaa was surreal. Best group vibe and genuine captain support throughout!',
     verified: true
   },
   {
     id: 'rev-6',
     author: 'Ananya Sen',
     location: 'Kolkata, West Bengal',
-    avatar: '/avatars/ananya-sen.jpg',
-    trip: 'Leh Ladakh Expedition (7D/6N)',
+    avatar: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=300&q=80',
+    trip: 'Kerala: God\'s Own Country (5D/4N)',
     rating: 5,
-    date: 'July 2026',
-    comment: 'Reaching Umling La (19,024 ft) with Parindaa marshals was unforgettable! Oxygen backup, warm campfires at Pangong Tso, and incredible camaraderie throughout the expedition.',
+    date: 'August 2026',
+    comment: 'Munnar tea gardens and the Alleppey houseboat cruise were pure bliss. As a solo female traveler, safety and respect were paramount, and Parindaa delivered 100%!',
     verified: true
   }
 ];

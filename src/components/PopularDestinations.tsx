@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Heart, MapPin, Star, Calendar, Clock, CheckCircle2, Maximize2, X, MessageSquare, Compass, Eye, Sparkles } from 'lucide-react';
+import { ArrowRight, Heart, MapPin, Star, Calendar, Clock, CheckCircle2, Maximize2, X, MessageSquare, Compass, Eye } from 'lucide-react';
 import { Destination, OFFICIAL_WHATSAPP_NUMBER } from '../data/travelData';
 
 interface PopularDestinationsProps {
@@ -27,17 +27,14 @@ export const PopularDestinations: React.FC<PopularDestinationsProps> = ({
   const categories = [
     { id: 'all', label: 'All Trips' },
     { id: 'himalayan', label: 'Himalayan Expeditions' },
-    { id: 'adventure', label: 'Adventure & Coastal' },
-    { id: 'tropical', label: 'Tropical & Islands' },
     { id: 'spiritual', label: 'Spiritual Yatras' },
+    { id: 'adventure', label: 'Adventure & Coastal' },
     { id: 'weekend', label: 'Weekend Getaways' },
   ];
 
   const filteredDestinations = destinations.filter((dest) => {
     const matchesCategory =
-      selectedCategory === 'all'
-        ? true
-        : dest.category === selectedCategory;
+      selectedCategory === 'all' || dest.category === selectedCategory;
     const matchesSearch =
       !searchFilter ||
       dest.name.toLowerCase().includes(searchFilter.toLowerCase()) ||
@@ -137,14 +134,14 @@ export const PopularDestinations: React.FC<PopularDestinationsProps> = ({
                     />
 
                     {/* Subtle top bar for badge and save button without obscuring the poster */}
-                    <div className="absolute top-3 left-3 right-3 flex items-start justify-between pointer-events-none gap-2">
-                      <div className="flex flex-col gap-1.5 pointer-events-auto">
-                        {dest.badge && (
-                          <span className="text-[11px] font-bold text-slate-950 bg-[#cbb72c] px-3 py-1 rounded-full shadow-md w-fit">
-                            {dest.badge}
-                          </span>
-                        )}
-                      </div>
+                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                      {dest.badge ? (
+                        <span className="pointer-events-auto text-[11px] font-bold text-slate-950 bg-[#cbb72c] px-3 py-1 rounded-full shadow-md">
+                          {dest.badge}
+                        </span>
+                      ) : (
+                        <span />
+                      )}
 
                       <div className="flex items-center gap-2 pointer-events-auto">
                         {/* Expand to Fullscreen button */}
