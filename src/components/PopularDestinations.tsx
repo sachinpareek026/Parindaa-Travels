@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Heart, MapPin, Star, Calendar, Clock, CheckCircle2, Maximize2, X, MessageSquare, Compass, Eye } from 'lucide-react';
+import { ArrowRight, Heart, MapPin, Star, Clock, CheckCircle2, Maximize2, X, MessageSquare, Compass, Eye, Sparkles } from 'lucide-react';
 import { Destination, OFFICIAL_WHATSAPP_NUMBER } from '../data/travelData';
 
 interface PopularDestinationsProps {
@@ -27,14 +27,17 @@ export const PopularDestinations: React.FC<PopularDestinationsProps> = ({
   const categories = [
     { id: 'all', label: 'All Trips' },
     { id: 'himalayan', label: 'Himalayan Expeditions' },
-    { id: 'spiritual', label: 'Spiritual Yatras' },
     { id: 'adventure', label: 'Adventure & Coastal' },
+    { id: 'tropical', label: 'Tropical & Islands' },
+    { id: 'spiritual', label: 'Spiritual Yatras' },
     { id: 'weekend', label: 'Weekend Getaways' },
   ];
 
   const filteredDestinations = destinations.filter((dest) => {
     const matchesCategory =
-      selectedCategory === 'all' || dest.category === selectedCategory;
+      selectedCategory === 'all'
+        ? true
+        : dest.category === selectedCategory;
     const matchesSearch =
       !searchFilter ||
       dest.name.toLowerCase().includes(searchFilter.toLowerCase()) ||
@@ -134,14 +137,14 @@ export const PopularDestinations: React.FC<PopularDestinationsProps> = ({
                     />
 
                     {/* Subtle top bar for badge and save button without obscuring the poster */}
-                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
-                      {dest.badge ? (
-                        <span className="pointer-events-auto text-[11px] font-bold text-slate-950 bg-[#cbb72c] px-3 py-1 rounded-full shadow-md">
-                          {dest.badge}
-                        </span>
-                      ) : (
-                        <span />
-                      )}
+                    <div className="absolute top-3 left-3 right-3 flex items-start justify-between pointer-events-none gap-2">
+                      <div className="flex flex-col gap-1.5 pointer-events-auto">
+                        {dest.badge && (
+                          <span className="text-[11px] font-bold text-slate-950 bg-[#cbb72c] px-3 py-1 rounded-full shadow-md w-fit">
+                            {dest.badge}
+                          </span>
+                        )}
+                      </div>
 
                       <div className="flex items-center gap-2 pointer-events-auto">
                         {/* Expand to Fullscreen button */}
@@ -231,14 +234,6 @@ export const PopularDestinations: React.FC<PopularDestinationsProps> = ({
                       ))}
                     </div>
 
-                    {/* Next Departure Date */}
-                    <div className="flex items-center justify-between text-xs text-slate-500 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                      <div className="flex items-center gap-1.5">
-                        <Calendar className="w-3.5 h-3.5 text-[#3482a4]" />
-                        <span>Next Batch: <strong className="text-slate-800 font-bold">{dest.departureDates[0]}</strong></span>
-                      </div>
-                    </div>
-
                     {/* Action Buttons */}
                     <div className="pt-1 flex items-center gap-2">
                       <button
@@ -304,7 +299,7 @@ export const PopularDestinations: React.FC<PopularDestinationsProps> = ({
               <div className="flex items-center gap-2">
                 <a
                   href={`https://wa.me/${OFFICIAL_WHATSAPP_NUMBER}?text=${encodeURIComponent(
-                    `✈️ *PARINDAA TRAVELS — TRIP INQUIRY*\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📍 *Trip:* ${activePosterModal.name}\n🗺️ *Region:* ${activePosterModal.region}\n⏱️ *Duration:* ${activePosterModal.duration}\n💰 *Price:* ₹${activePosterModal.priceINR.toLocaleString('en-IN')} / person\n🗓️ *Next Departure:* ${activePosterModal.departureDates[0]}\n\n💬 *Message:* Hi Parindaa Captain! I am inquiring about the ${activePosterModal.name} trip. Please share full details and booking procedure!\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+                    `✈️ *PARINDAA TRAVELS — TRIP INQUIRY*\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📍 *Trip:* ${activePosterModal.name}\n🗺️ *Region:* ${activePosterModal.region}\n⏱️ *Duration:* ${activePosterModal.duration}\n💰 *Price:* ₹${activePosterModal.priceINR.toLocaleString('en-IN')} / person\n\n💬 *Message:* Hi Parindaa Captain! I am inquiring about the ${activePosterModal.name} trip. Please share full details and booking procedure!\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━`
                   )}`}
                   target="_blank"
                   rel="noreferrer"

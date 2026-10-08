@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Film, Clapperboard, ExternalLink, Sparkles, Maximize2, X, MessageSquare } from 'lucide-react';
+import { Film, Clapperboard, ExternalLink, Maximize2, X, MessageSquare } from 'lucide-react';
 import { OFFICIAL_WHATSAPP_NUMBER } from '../data/travelData';
 
 export const TravelCinemaBanner: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const desktopImage = 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791223360/GULMARG_7.jpg';
-  const mobileImage = 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791223245/splitimage.im-2_6.png';
+  const cinemaImage = 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791223360/GULMARG_7.jpg';
 
   return (
     <section id="travel-cinema" className="py-12 sm:py-16 bg-slate-950 text-white relative overflow-hidden border-y border-slate-900">
@@ -76,29 +75,17 @@ export const TravelCinemaBanner: React.FC = () => {
           </div>
         </div>
 
-        {/* Responsive Cinema Artwork Display (Desktop: GULMARG_7.jpg / Mobile: splitimage.im-2_6.png) */}
+        {/* Full Cinema Artwork Display (Same full image on mobile as on desktop) */}
         <div 
           onClick={() => setIsModalOpen(true)}
           className="group relative rounded-2xl sm:rounded-3xl overflow-hidden border border-white/15 bg-slate-900 shadow-2xl hover:border-[#3482a4]/70 transition-all duration-300 cursor-pointer"
         >
-          <picture className="w-full block">
-            {/* Mobile portrait screen: splitimage.im-2_6.png (3039x4050) */}
-            <source
-              media="(max-width: 767px)"
-              srcSet={mobileImage}
-            />
-            {/* Desktop and tablet landscape: GULMARG_7.jpg (6381x2835) */}
-            <source
-              media="(min-width: 768px)"
-              srcSet={desktopImage}
-            />
-            <img
-              src={desktopImage}
-              alt="India's 1st Experimental Travel Cinema Project - Chehra Films & Parindaa Travels Gulmarg Project"
-              className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 block"
-              loading="lazy"
-            />
-          </picture>
+          <img
+            src={cinemaImage}
+            alt="India's 1st Experimental Travel Cinema Project - Chehra Films & Parindaa Travels Gulmarg Project"
+            className="w-full h-auto object-contain sm:object-cover group-hover:scale-[1.01] transition-transform duration-700 block"
+            loading="lazy"
+          />
 
           {/* Interactive Hover Bar with Zoom Icon */}
           <div className="absolute bottom-4 right-4 flex items-center gap-2">
@@ -147,23 +134,13 @@ export const TravelCinemaBanner: React.FC = () => {
               </button>
             </div>
 
-            {/* Poster Content (responsive in modal) */}
+            {/* Poster Content (full poster in modal) */}
             <div className="relative flex-1 overflow-auto p-2 sm:p-4 flex items-center justify-center bg-black/80">
-              <picture className="max-h-[75vh] w-auto block">
-                <source
-                  media="(max-width: 767px)"
-                  srcSet={mobileImage}
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcSet={desktopImage}
-                />
-                <img
-                  src={desktopImage}
-                  alt="Travel Cinema Project"
-                  className="max-h-[75vh] w-auto object-contain rounded-xl shadow-2xl mx-auto"
-                />
-              </picture>
+              <img
+                src={cinemaImage}
+                alt="India's 1st Experimental Travel Cinema Project - Chehra Films & Parindaa Travels"
+                className="max-h-[75vh] w-auto max-w-full object-contain rounded-xl shadow-2xl block mx-auto"
+              />
             </div>
 
             {/* Modal Footer */}

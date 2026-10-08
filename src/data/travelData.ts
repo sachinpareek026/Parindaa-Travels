@@ -32,6 +32,9 @@ export interface Destination {
     meals: string;
     stay: string;
   }[];
+  bestTimeToVisit: string;
+  isTopOctDecTrip?: boolean;
+  seasonBadge?: string;
 }
 
 export interface Review {
@@ -57,55 +60,6 @@ export interface InstagramPost {
 
 export const DESTINATIONS: Destination[] = [
   {
-    id: 'meghalaya-unseen',
-    name: 'Unseen Meghalaya',
-    country: 'India',
-    region: 'Northeast India (Ex-Guwahati)',
-    tagline: 'Caves & Waterfall Capital of India',
-    description: 'Explore 13+ scenic waterfalls, 7 mysterious limestone caves, living root bridges, and deep canyon viewpoints across Shillong, Cherrapunji, Dawki, and Krang Shuri.',
-    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220481/728704385_17917244007398063_3477220131125489886_n.webp',
-    heroImage: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=2000&q=85',
-    secondaryImages: [
-      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
-    ],
-    priceINR: 12999,
-    priceUSD: 165,
-    duration: '5 Days / 6 Nights',
-    rating: 4.96,
-    reviewCount: 312,
-    badge: 'Bestseller',
-    category: 'adventure',
-    highlights: [
-      '13+ Scenic Waterfalls including Nohkalikai & Krang Shuri',
-      '7 Limestone Caves Exploration (Mawsmai, Arwah & Krem Puri)',
-      'Double Decker Living Root Bridges Trek',
-      'Transparent Umngot River Boating in Dawki',
-      '6 Canyons & Viewpoints plus 5 Khasi Heritage Villages'
-    ],
-    inclusions: [
-      'Boutique Hill Stays in Shillong & Cherrapunji',
-      'Daily Nutritious Breakfast & Warm Dinners',
-      'Private Tempo Traveler / SUV transfers Ex-Guwahati',
-      'Certified Khasi Local Guide & Parindaa Trip Captain',
-      'All Village, Cave & Forest Conservation Permits'
-    ],
-    exclusions: [
-      'Airfare or Train to Guwahati (GAU)',
-      'Ziplining or optional cliff jumping charges',
-      'Personal snacks, rain gear & tipping',
-      'Lunches during transfers'
-    ],
-    departureDates: ['16 Oct 2026', '24 Oct 2026', '06 Nov 2026', '20 Nov 2026', '04 Dec 2026'],
-    itinerary: [
-      { day: 1, title: 'Arrival at Guwahati & Drive to Shillong', details: 'Meet your Parindaa Captain at Guwahati Airport/Railway Station. Stop at scenic Umiam Lake (Barapani) and check into pine-scented Shillong hotel.', meals: 'Dinner Included', stay: 'Pine View Heritage Hotel, Shillong' },
-      { day: 2, title: 'Shillong to Cherrapunji via Majestic Waterfalls', details: 'Journey across cloud-draped canyons. Visit Elephant Falls, Mawkdok Dympep Valley viewpoint, Nohkalikai Falls, and explore Arwah Cave fossils.', meals: 'Breakfast & Dinner', stay: 'Cherrapunji Holiday Resort' },
-      { day: 3, title: 'Epic Double Decker Living Root Bridge Trek', details: 'Hike down stone pathways into Nongriat subtropical rainforest. Cross 150-year-old living root bridges and dip into Rainbow Falls crystal turquoise pools.', meals: 'Breakfast & Dinner', stay: 'Cherrapunji Holiday Resort' },
-      { day: 4, title: 'Mawlynnong Cleanest Village & Dawki Glass River', details: 'Explore Mawlynnong village with single living root bridge. Reach Dawki border where wooden boats float mid-air on crystal-clear Umngot river.', meals: 'Breakfast & Dinner', stay: 'Riverside Camp / Cottage, Shnongpdeng' },
-      { day: 5, title: 'Krang Shuri Azure Waterfalls & Return via Guwahati', details: 'Swim under the magical turquoise waters of Krang Shuri falls. Visit ancient monoliths at Jowai before smooth drop-off at Guwahati.', meals: 'Breakfast Included', stay: 'Departure' },
-    ]
-  },
-  {
     id: 'kashmir-paradise',
     name: 'Kashmir',
     country: 'India',
@@ -113,10 +67,10 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'City of Love, City of Dreams: Srinagar · Gulmarg · Sonmarg',
     description: 'Drift along serene waters on a handcrafted shikara in Dal Lake, ride the world-renowned Gulmarg Gondola over snowy peaks, and wander through golden meadow glaciers of Sonmarg and Pahalgam.',
     image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220480/759986781_17923503375398063_5737305628230900821_n.webp',
-    heroImage: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=2000&q=85',
+    heroImage: '/hero/kashmir-paradise.jpg',
     secondaryImages: [
-      'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=800&q=80',
+      '/hero/kashmir-paradise.jpg',
+      '/hero/kashmir-gulmarg.jpg',
     ],
     priceINR: 14999,
     priceUSD: 189,
@@ -125,6 +79,7 @@ export const DESTINATIONS: Destination[] = [
     reviewCount: 428,
     badge: 'Bestseller',
     category: 'himalayan',
+    bestTimeToVisit: 'October to December (Golden Chinar Foliage & Winter Chill)',
     highlights: [
       'Gulmarg Gondola Phase 1 & 2 Cable Car Ride',
       'Sunset Shikara Cruise on Dal Lake & Char Chinar',
@@ -156,245 +111,6 @@ export const DESTINATIONS: Destination[] = [
     ]
   },
   {
-    id: 'jyotirlinga-darshan',
-    name: 'Jyotirlinga & Shaktipeeth Darshan',
-    country: 'India',
-    region: 'Maharashtra & Madhya Pradesh',
-    tagline: 'Grishneshwar · Bhimashankar · Gadhkalika · Harsiddhi Mata',
-    description: 'Embark on a sacred spiritual pilgrimage covering holy Jyotirlingas and revered Shaktipeeths with seamless comfortable transfers, VIP darshan coordination, and satvik stays.',
-    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220481/727158786_17916396195398063_5804642615287964419_n.webp',
-    heroImage: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=2000&q=85',
-    secondaryImages: [
-      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
-    ],
-    priceINR: 4999,
-    priceUSD: 65,
-    duration: '6 Days / 5 Nights',
-    rating: 4.93,
-    reviewCount: 245,
-    badge: 'Divine Yatra',
-    category: 'spiritual',
-    highlights: [
-      'Grishneshwar Jyotirlinga (12th Sacred Jyotirlinga)',
-      'Bhimashankar Jyotirlinga in Western Ghats Sahyadri Hills',
-      'Harsiddhi Mata Shaktipeeth & Gadhkalika Mata Temple',
-      'Mahakaleshwar Temple Ujjain Darshan & Aarti coordination',
-      'Dedicated Spiritual Trip Coordinator & Satvik Meals'
-    ],
-    inclusions: [
-      'Clean Deluxe Hotel Stays near Temple premises',
-      'Daily Satvik Vegetarian Breakfast & Dinners',
-      'Sanitized AC Luxury Coach / Bus Transfers',
-      'Temple Guide & VIP Darshan assistance',
-      'Toll taxes, parking and driver allowances'
-    ],
-    exclusions: [
-      'Personal Pooja, Abhishek & Dakshina offerings',
-      'Travel tickets from hometown to reporting city',
-      'Personal laundry, beverages and lunch expenses'
-    ],
-    departureDates: ['18 Oct 2026', '28 Oct 2026', '12 Nov 2026', '26 Nov 2026'],
-    itinerary: [
-      { day: 1, title: 'Assembly & Drive toward Bhimashankar', details: 'Assemble at departure hub. Travel through picturesque Sahyadri ghats to sacred Bhimashankar Jyotirlinga temple.', meals: 'Dinner Included', stay: 'Comfort Stay, Bhimashankar' },
-      { day: 2, title: 'Bhimashankar Darshan & Transfer to Aurangabad', details: 'Morning holy jalabhishekam at Bhimashankar. Proceed toward Aurangabad with evening bhajans on the journey.', meals: 'Breakfast & Dinner', stay: 'Deluxe Hotel, Aurangabad' },
-      { day: 3, title: 'Grishneshwar Jyotirlinga & Ellora', details: 'Darshan at Grishneshwar, the 12th Jyotirlinga. Witness the architectural wonder of ancient Kailash Temple nearby.', meals: 'Breakfast & Dinner', stay: 'Deluxe Hotel, Aurangabad' },
-      { day: 4, title: 'Journey to Ujjain: The City of Mahakal', details: 'Drive across the heartland to holy Ujjain. Check into hotel and attend evening Sandhya Aarti along the banks of Shipra river.', meals: 'Breakfast & Dinner', stay: 'Temple Stay, Ujjain' },
-      { day: 5, title: 'Gadhkalika Mata & Harsiddhi Shaktipeeth Darshan', details: 'Perform pooja at ancient Harsiddhi Mata Shaktipeeth and Gadhkalika temple. Seek blessings at Mahakaleshwar temple.', meals: 'Breakfast & Dinner', stay: 'Temple Stay, Ujjain' },
-      { day: 6, title: 'Spiritual Fulfillment & Return Journey', details: 'Morning prayer and breakfast before returning with prasad and auspicious divine memories.', meals: 'Breakfast Included', stay: 'Departure' },
-    ]
-  },
-  {
-    id: 'kainchi-dham-weekend',
-    name: 'Kainchi Dham & Mukteshwar',
-    country: 'India',
-    region: 'Uttarakhand (Ex-Delhi & Jaipur)',
-    tagline: 'Neeb Karori Baba Ashram & Mukteshwar Himalayan Vistas',
-    description: 'Experience deep spiritual peace at Neem Karoli Baba Kainchi Dham Ashram, soak in 360-degree snow-capped Himalayan panoramas at Mukteshwar, and walk pine forests with fellow Parindey.',
-    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220481/761747174_17923506819398063_6676138420613236619_n.webp',
-    heroImage: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=85',
-    secondaryImages: [
-      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
-    ],
-    priceINR: 4999,
-    priceUSD: 65,
-    duration: '3 Days / 2 Nights',
-    rating: 4.97,
-    reviewCount: 380,
-    badge: 'Popular',
-    category: 'weekend',
-    highlights: [
-      'Kainchi Dham Neem Karoli Baba Ashram Darshan & Meditation',
-      'Chauli Ki Jali Cliff Point & Mukteshwar Dham Temple',
-      'Scenic Himalayan Sunset & Sunrise Views of Nanda Devi Range',
-      'Nainital Lake Drive & Bhimtal Water activities',
-      'Convenient Overnight AC Pushback Bus Ex-Delhi & Jaipur'
-    ],
-    inclusions: [
-      '2 Nights Hill Resort Accommodation in Mukteshwar / Nainital',
-      'Daily Breakfast & Homestyle Mountain Dinners',
-      'Round-Trip AC Tempo Traveler / Luxury Coach from Delhi & Jaipur',
-      'Dedicated Parindaa Trip Captain and coordinator',
-      'All tolls, driver charges & parking fees'
-    ],
-    exclusions: [
-      'Lunch and roadside cafe stops',
-      'Personal adventure sports (rock climbing/zipline at Chauli Ki Jali)',
-      'Personal shopping for local jams and woollens'
-    ],
-    departureDates: ['Every Friday: 16 Oct', '23 Oct', '30 Oct', '06 Nov', '13 Nov 2026'],
-    itinerary: [
-      { day: 1, title: 'Overnight Departure from Delhi / Jaipur', details: 'Board comfortable AC traveler from Delhi/Jaipur in the evening. Overnight drive through scenic foothills into Kumaon Himalayas.', meals: 'Night Transit', stay: 'Overnight Journey' },
-      { day: 2, title: 'Kainchi Dham Darshan & Mukteshwar Check-in', details: 'Reach peaceful Kainchi Dham early morning. Spend time in meditation and prasad. Drive to scenic Mukteshwar for cliff views.', meals: 'Breakfast & Dinner', stay: 'Pine View Retreat, Mukteshwar' },
-      { day: 3, title: 'Chauli Ki Jali, Bhimtal & Return Journey', details: 'Sunrise view of snow peaks. Visit 350-year-old Mukteshwar temple and Chauli Ki Jali. Stop at Bhimtal before night drop-off in Delhi/Jaipur.', meals: 'Breakfast Included', stay: 'Return Transit' },
-    ]
-  },
-  {
-    id: 'goa-bike-adventure',
-    name: 'Goa Coastal Bike Trip',
-    country: 'India',
-    region: 'Goa & Konkan Coast',
-    tagline: 'Dudhsagar Waterfalls · Major North & South Beaches · Fun Roads',
-    description: 'Feel the sea wind on two wheels! Cruise along palm-fringed coastal highways, marvel at the four-tiered Dudhsagar Waterfalls, explore secret southern coves, and party under starry beach skies.',
-    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220481/724279254_17915485848398063_8979356828108422140_n.webp',
-    heroImage: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=2000&q=85',
-    secondaryImages: [
-      'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80',
-    ],
-    priceINR: 6500,
-    priceUSD: 85,
-    duration: '5 Days / 4 Nights',
-    rating: 4.92,
-    reviewCount: 310,
-    badge: 'Trending',
-    category: 'adventure',
-    highlights: [
-      'Dudhsagar Waterfalls 4x4 Jeep Safari & Swim',
-      'Both North (Anjuna, Vagator) and South Goa (Palolem, Cola) Beaches',
-      'Scooty / Bike Rental Included throughout the trip',
-      'Historic Chapora Fort (Dil Chahta Hai) & Fort Aguada',
-      'Beachside Sunset Campfire & Acoustic Music Night'
-    ],
-    inclusions: [
-      '4-Star Resort stay with Swimming Pool',
-      'Scooty / Royal Enfield Bike option included for all days',
-      'Daily Buffet Breakfast',
-      'Dudhsagar Wildlife Sanctuary Safari entry permits',
-      'Experienced Parindaa Bike Marshal & Leader'
-    ],
-    exclusions: [
-      'Fuel for bikes (pay-as-you-go)',
-      'Travel to Goa airport/station',
-      'Personal water sports (parasailing/jet ski)',
-      'Alcoholic drinks and club entry covers'
-    ],
-    departureDates: ['21 Oct 2026', '04 Nov 2026', '18 Nov 2026', '02 Dec 2026'],
-    itinerary: [
-      { day: 1, title: 'Arrival in Goa & Scooter Handover', details: 'Check into your resort. Receive your sanitized scooty/bike with helmets. Evening sunset ride to Vagator beach and hilltop cafe.', meals: 'Welcome Drink', stay: 'Resort with Pool, North Goa' },
-      { day: 2, title: 'Majestic Dudhsagar Waterfall Expedition', details: 'Early morning ride towards Mollem National Park. Jump into 4x4 jeeps through jungle streams to the roaring Dudhsagar waterfalls.', meals: 'Breakfast', stay: 'Resort with Pool, North Goa' },
-      { day: 3, title: 'North Goa Coastal Trail: Forts & Secret Coves', details: 'Cruise past Portuguese villas to Chapora Fort, Morjim beach, and Mandrem. Watch golden sunset at Ashwem beach.', meals: 'Breakfast', stay: 'Resort with Pool, North Goa' },
-      { day: 4, title: 'South Goa Explorer: Palolem & Cabo de Rama', details: 'Ride south to the secluded cliffs of Cabo de Rama and turquoise waters of Palolem. Celebrate farewell bonfire night.', meals: 'Breakfast', stay: 'Resort with Pool, North Goa' },
-      { day: 5, title: 'Souvenir Cruise & Flight Departure', details: 'Last-minute beach stroll and shopping in Panjim Fontainhas Latin Quarter before vehicle handover and airport drop-off.', meals: 'Breakfast Included', stay: 'Departure' },
-    ]
-  },
-  {
-    id: 'leh-ladakh-circuit',
-    name: 'Leh Ladakh Expedition',
-    country: 'India',
-    region: 'Trans-Himalayas, Ladakh',
-    tagline: 'Leh · Nubra Valley · Turtuk · Pangong Lake · Hanle · Umling La',
-    description: 'Ride across the world highest motorable pass Umling La (19,024 ft), camp beside the surreal shifting blue waters of Pangong Tso, and stargaze at the Dark Sky Reserve in Hanle.',
-    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220481/726660058_17915957589398063_1894404032407606329_n.webp',
-    heroImage: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=2000&q=85',
-    secondaryImages: [
-      'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80',
-    ],
-    priceINR: 16500,
-    priceUSD: 210,
-    duration: '7 Days / 6 Nights',
-    rating: 4.98,
-    reviewCount: 450,
-    badge: 'Parindaa Special',
-    category: 'himalayan',
-    highlights: [
-      'Umling La Pass (19,024 ft) - Highest Motorable Road in the World',
-      'Pangong Tso Lake Camping under Galactic Stars',
-      'Hunder Sand Dunes & Double Humped Bactrian Camel Ride',
-      'Turtuk: Indo-Balti Border Village on the LOC',
-      'Khardung La Pass (17,582 ft) & Hanle Dark Sky Observatory'
-    ],
-    inclusions: [
-      'Deluxe Hotel Stays in Leh & Luxury Swiss Tents at Pangong & Nubra',
-      'Daily Nutritious High-Altitude Breakfast & Dinners',
-      'Royal Enfield Himalayan / 4x4 Backup Vehicle with Mechanic',
-      'Oxygen Cylinders, Medical First Aid & Certified Expedition Captain',
-      'All Inner Line Permits, Wildlife & Environmental Fees'
-    ],
-    exclusions: [
-      'Flights to/from Leh Kushok Bakula Airport (IXL)',
-      'Fuel for bikes (if taking bike package)',
-      'Personal riding gear & security deposit',
-      'Lunches during daily rides'
-    ],
-    departureDates: ['17 Oct 2026', '25 Oct 2026', '08 Nov 2026', '22 Nov 2026'],
-    itinerary: [
-      { day: 1, title: 'Arrival in Leh & Crucial Acclimatization', details: 'Touchdown at high-altitude Leh (11,500 ft). Strict rest for altitude acclimatization with hot garlic soup. Evening walk at Leh Market.', meals: 'Dinner Included', stay: 'Grand Heritage Hotel, Leh' },
-      { day: 2, title: 'Leh Local: Magnetic Hill, Sangam & Hall of Fame', details: 'Visit confluence of Indus and Zanskar rivers, Magnetic Hill, Gurudwara Pathar Sahib, and test-ride bikes through Sham Valley.', meals: 'Breakfast & Dinner', stay: 'Grand Heritage Hotel, Leh' },
-      { day: 3, title: 'Leh to Nubra Valley via Khardung La Pass', details: 'Scale the mighty Khardung La (17,582 ft). Descend into Nubra sand dunes for ATV riding and double-humped camel safari at sunset.', meals: 'Breakfast & Dinner', stay: 'Deluxe Swiss Camps, Nubra' },
-      { day: 4, title: 'Excursion to Turtuk: The Last Indian Outpost', details: 'Ride along Shyok river to Baltistan border village Turtuk. Taste fresh apricots and experience unique Balti culture.', meals: 'Breakfast & Dinner', stay: 'Deluxe Swiss Camps, Nubra' },
-      { day: 5, title: 'Nubra to Pangong Tso Lake via Shyok Route', details: 'Rugged riverbed ride to the dramatic colors of Pangong Lake (14,270 ft). Stargaze under zero light pollution.', meals: 'Breakfast & Dinner', stay: 'Luxury Lake Cottages, Pangong' },
-      { day: 6, title: 'Pangong to Hanle & Umling La Summit Push', details: 'Early ascent to Umling La (19,024 ft), the rooftop of the world. Celebrate triumph before returning to Leh through Chang La.', meals: 'Breakfast & Dinner', stay: 'Grand Heritage Hotel, Leh' },
-      { day: 7, title: 'Departure with the Badge of a True Parinda', details: 'Transfer to Leh Airport with unforgettable memories of the ultimate Himalayan expedition.', meals: 'Breakfast Included', stay: 'Departure' },
-    ]
-  },
-  {
-    id: 'kerala-gods-own-country',
-    name: 'Kerala: God’s Own Country',
-    country: 'India',
-    region: 'South India',
-    tagline: 'Munnar 2D · Thekkady · Alleppey Houseboat · Kanyakumari',
-    description: 'Immerse in velvet emerald tea estates in Munnar, spice hills in Thekkady, an authentic overnight houseboat cruise in Alleppey backwaters, and Kanyakumari coastal sunrise.',
-    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220482/724061399_17915593464398063_5564154880270854714_n.webp',
-    heroImage: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=2000&q=85',
-    secondaryImages: [
-      'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80',
-    ],
-    priceINR: 9999,
-    priceUSD: 129,
-    duration: '5D/4N (or 7D/6N Classical)',
-    rating: 4.94,
-    reviewCount: 362,
-    badge: 'Popular',
-    category: 'tropical',
-    highlights: [
-      'Overnight Private Houseboat Cruise in Alleppey Backwaters',
-      'Munnar Tea Gardens, Lockhart Estate & Mattupetty Dam',
-      'Thekkady Periyar Wildlife & Organic Spice Garden Tour',
-      'Traditional Kerala Sadya Feast served on Banana Leaf',
-      'Optional Extension to Kanyakumari Sunset & Rameshwaram'
-    ],
-    inclusions: [
-      '4-Star Hill Resort in Munnar & Deluxe Private Houseboat',
-      'All Meals on Houseboat (Lunch, High Tea, Dinner, Breakfast)',
-      'Daily Hotel Buffet Breakfast',
-      'Chauffeured Private AC Sedan / Tempo Traveler throughout',
-      'Spice Plantation Guided Tour & Entry Permits'
-    ],
-    exclusions: [
-      'Flight or Train to Kochi (COK)',
-      'Kathakali / Kalaripayattu theater tickets (~₹300)',
-      'Personal Ayurvedic wellness massages',
-      'Personal purchases of spices and banana chips'
-    ],
-    departureDates: ['19 Oct 2026', '29 Oct 2026', '10 Nov 2026', '24 Nov 2026', '08 Dec 2026'],
-    itinerary: [
-      { day: 1, title: 'Arrival at Kochi to Misty Munnar Hills', details: 'Meet your Parindaa host at Cochin. Drive past Cheeyappara & Valara waterfalls into the misty tea carpet hills of Munnar.', meals: 'Dinner Included', stay: 'Tea Valley Resort, Munnar' },
-      { day: 2, title: 'Munnar Tea Exploration & Eravikulam', details: 'Visit Eravikulam National Park to spot Nilgiri Tahr. Explore Lockhart Tea Factory and echo point at Mattupetty dam.', meals: 'Breakfast & Dinner', stay: 'Tea Valley Resort, Munnar' },
-      { day: 3, title: 'Munnar to Thekkady Spice Hills', details: 'Drive to Thekkady. Take a guided aromatic spice garden walk smelling cardamom and cinnamon, followed by martial arts show.', meals: 'Breakfast & Dinner', stay: 'Green Mist Retreat, Thekkady' },
-      { day: 4, title: 'Alleppey Backwaters Houseboat Cruise', details: 'Board your private handcrafted houseboat at noon. Glide through palm-fringed lagoons while savoring freshly prepared Karimeen fish.', meals: 'Breakfast, Lunch & Dinner', stay: 'Private Houseboat, Alleppey' },
-      { day: 5, title: 'Fort Kochi Heritage & Farewell Kerala', details: 'Morning backwater sunrise breakfast. Visit Chinese fishing nets in Fort Kochi before transfer to Cochin Airport.', meals: 'Breakfast Included', stay: 'Departure' },
-    ]
-  },
-  {
     id: 'andaman-island-odyssey',
     name: 'Andaman Island Odyssey',
     country: 'India',
@@ -402,9 +118,9 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Port Blair · Havelock Island · Radhanagar Beach · Neil Island',
     description: 'Dive into crystal-turquoise lagoons, sail across the Bay of Bengal on high-speed catamarans, walk white coral beaches of Havelock, and witness breathtaking sunsets at Radhanagar Beach.',
     image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791318534/SaveClip.App_728243718_17916647766398063_7418744831974953095_n.webp',
-    heroImage: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=2000&q=85',
+    heroImage: '/hero/andaman-island-odyssey.jpg',
     secondaryImages: [
-      'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80',
+      '/hero/andaman-island-odyssey.jpg',
       'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
     ],
     priceINR: 18999,
@@ -412,8 +128,9 @@ export const DESTINATIONS: Destination[] = [
     duration: '6 Days / 5 Nights',
     rating: 4.96,
     reviewCount: 284,
-    badge: 'Trending',
+    badge: 'Bestseller',
     category: 'adventure',
+    bestTimeToVisit: 'October to December (Calm Azure Seas & Corals)',
     highlights: [
       'Radhanagar Beach Sunset (Ranked Asia’s #1 Best Beach)',
       'Elephant Beach Snorkeling & Coral Reef Water Adventures',
@@ -452,18 +169,19 @@ export const DESTINATIONS: Destination[] = [
     tagline: 'Gulmarg Gondola · Apharwat Peak 13,780 ft · Dal Lake · Drung Waterfall',
     description: 'Ascend into a winter wonderland! Ride the world’s second-highest operating cable car up to Apharwat Peak at 13,780 ft, ski through powder snow meadows in Gulmarg, visit the frozen Drung waterfall, and stay on heritage Dal Lake houseboats.',
     image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791223245/splitimage.im-2_6.png',
-    heroImage: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=2000&q=85',
+    heroImage: '/hero/kashmir-gulmarg.jpg',
     secondaryImages: [
-      'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80',
+      '/hero/kashmir-gulmarg.jpg',
+      '/hero/kashmir-paradise.jpg',
     ],
     priceINR: 13999,
     priceUSD: 175,
     duration: '5 Days / 4 Nights',
     rating: 4.98,
     reviewCount: 390,
-    badge: 'Trending',
+    badge: 'Parindaa Special',
     category: 'himalayan',
+    bestTimeToVisit: 'October to December (Peak Snow & Autumn Vibes)',
     highlights: [
       'Gulmarg Gondola Phase 1 (Kongdoori) & Phase 2 (Apharwat 13,780 ft)',
       'Drung Frozen Waterfall & Tangmarg Pine Forest Valley',
@@ -492,6 +210,302 @@ export const DESTINATIONS: Destination[] = [
       { day: 4, title: 'Gulmarg Snow Meadows to Srinagar Heritage Walk', details: 'Morning sledging and snow photography in Gulmarg bowl. Drive back to Srinagar for a walk through historic Old City, Jamia Masjid, and spice bazaars.', meals: 'Breakfast & Dinner', stay: 'Deluxe Boutique Hotel, Srinagar' },
       { day: 5, title: 'Warm Kahwa Breakfast & Airport Farewell', details: 'Sip hot saffron Kashmiri Kahwa with Girda bread breakfast before timely drop-off at Srinagar Airport for your return flight.', meals: 'Breakfast Included', stay: 'Departure' },
     ]
+  },
+  {
+    id: 'kerala-gods-own-country',
+    name: 'Kerala: God’s Own Country',
+    country: 'India',
+    region: 'South India',
+    tagline: 'Munnar 2D · Thekkady · Alleppey Houseboat · Kanyakumari',
+    description: 'Immerse in velvet emerald tea estates in Munnar, spice hills in Thekkady, an authentic overnight houseboat cruise in Alleppey backwaters, and Kanyakumari coastal sunrise.',
+    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220482/724061399_17915593464398063_5564154880270854714_n.webp',
+    heroImage: '/hero/kerala-gods-own-country.jpg',
+    secondaryImages: [
+      '/hero/kerala-gods-own-country.jpg',
+      'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80',
+    ],
+    priceINR: 9999,
+    priceUSD: 129,
+    duration: '5D/4N (or 7D/6N Classical)',
+    rating: 4.94,
+    reviewCount: 362,
+    badge: 'Trending',
+    category: 'tropical',
+    bestTimeToVisit: 'October to December (Lush Post-Monsoon & Backwaters)',
+    isTopOctDecTrip: true,
+    seasonBadge: '🌴 Top Tropical Trip: Oct to Dec',
+    highlights: [
+      'Overnight Private Houseboat Cruise in Alleppey Backwaters',
+      'Munnar Tea Gardens, Lockhart Estate & Mattupetty Dam',
+      'Thekkady Periyar Wildlife & Organic Spice Garden Tour',
+      'Traditional Kerala Sadya Feast served on Banana Leaf',
+      'Optional Extension to Kanyakumari Sunset & Rameshwaram'
+    ],
+    inclusions: [
+      '4-Star Hill Resort in Munnar & Deluxe Private Houseboat',
+      'All Meals on Houseboat (Lunch, High Tea, Dinner, Breakfast)',
+      'Daily Hotel Buffet Breakfast',
+      'Chauffeured Private AC Sedan / Tempo Traveler throughout',
+      'Spice Plantation Guided Tour & Entry Permits'
+    ],
+    exclusions: [
+      'Flight or Train to Kochi (COK)',
+      'Kathakali / Kalaripayattu theater tickets (~₹300)',
+      'Personal Ayurvedic wellness massages',
+      'Personal purchases of spices and banana chips'
+    ],
+    departureDates: ['19 Oct 2026', '29 Oct 2026', '10 Nov 2026', '24 Nov 2026', '08 Dec 2026'],
+    itinerary: [
+      { day: 1, title: 'Arrival at Kochi to Misty Munnar Hills', details: 'Meet your Parindaa host at Cochin. Drive past Cheeyappara & Valara waterfalls into the misty tea carpet hills of Munnar.', meals: 'Dinner Included', stay: 'Tea Valley Resort, Munnar' },
+      { day: 2, title: 'Munnar Tea Exploration & Eravikulam', details: 'Visit Eravikulam National Park to spot Nilgiri Tahr. Explore Lockhart Tea Factory and echo point at Mattupetty dam.', meals: 'Breakfast & Dinner', stay: 'Tea Valley Resort, Munnar' },
+      { day: 3, title: 'Munnar to Thekkady Spice Hills', details: 'Drive to Thekkady. Take a guided aromatic spice garden walk smelling cardamom and cinnamon, followed by martial arts show.', meals: 'Breakfast & Dinner', stay: 'Green Mist Retreat, Thekkady' },
+      { day: 4, title: 'Alleppey Backwaters Houseboat Cruise', details: 'Board your private handcrafted houseboat at noon. Glide through palm-fringed lagoons while savoring freshly prepared Karimeen fish.', meals: 'Breakfast, Lunch & Dinner', stay: 'Private Houseboat, Alleppey' },
+      { day: 5, title: 'Fort Kochi Heritage & Farewell Kerala', details: 'Morning backwater sunrise breakfast. Visit Chinese fishing nets in Fort Kochi before transfer to Cochin Airport.', meals: 'Breakfast Included', stay: 'Departure' },
+    ]
+  },
+  {
+    id: 'meghalaya-unseen',
+    name: 'Unseen Meghalaya',
+    country: 'India',
+    region: 'Northeast India (Ex-Guwahati)',
+    tagline: 'Caves & Waterfall Capital of India',
+    description: 'Explore 13+ scenic waterfalls, 7 mysterious limestone caves, living root bridges, and deep canyon viewpoints across Shillong, Cherrapunji, Dawki, and Krang Shuri.',
+    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220481/728704385_17917244007398063_3477220131125489886_n.webp',
+    heroImage: '/hero/meghalaya-unseen.jpg',
+    secondaryImages: [
+      '/hero/meghalaya-unseen.jpg',
+    ],
+    priceINR: 12999,
+    priceUSD: 165,
+    duration: '5 Days / 6 Nights',
+    rating: 4.96,
+    reviewCount: 312,
+    badge: 'Popular',
+    category: 'adventure',
+    bestTimeToVisit: 'October to April (Caves & Clear Waterfall Pools)',
+    highlights: [
+      '13+ Scenic Waterfalls including Nohkalikai & Krang Shuri',
+      '7 Limestone Caves Exploration (Mawsmai, Arwah & Krem Puri)',
+      'Double Decker Living Root Bridges Trek',
+      'Transparent Umngot River Boating in Dawki',
+      '6 Canyons & Viewpoints plus 5 Khasi Heritage Villages'
+    ],
+    inclusions: [
+      'Boutique Hill Stays in Shillong & Cherrapunji',
+      'Daily Nutritious Breakfast & Warm Dinners',
+      'Private Tempo Traveler / SUV transfers Ex-Guwahati',
+      'Certified Khasi Local Guide & Parindaa Trip Captain',
+      'All Village, Cave & Forest Conservation Permits'
+    ],
+    exclusions: [
+      'Airfare or Train to Guwahati (GAU)',
+      'Ziplining or optional cliff jumping charges',
+      'Personal snacks, rain gear & tipping',
+      'Lunches during transfers'
+    ],
+    departureDates: ['16 Oct 2026', '24 Oct 2026', '06 Nov 2026', '20 Nov 2026', '04 Dec 2026'],
+    itinerary: [
+      { day: 1, title: 'Arrival at Guwahati & Drive to Shillong', details: 'Meet your Parindaa Captain at Guwahati Airport/Railway Station. Stop at scenic Umiam Lake (Barapani) and check into pine-scented Shillong hotel.', meals: 'Dinner Included', stay: 'Pine View Heritage Hotel, Shillong' },
+      { day: 2, title: 'Shillong to Cherrapunji via Majestic Waterfalls', details: 'Journey across cloud-draped canyons. Visit Elephant Falls, Mawkdok Dympep Valley viewpoint, Nohkalikai Falls, and explore Arwah Cave fossils.', meals: 'Breakfast & Dinner', stay: 'Cherrapunji Holiday Resort' },
+      { day: 3, title: 'Epic Double Decker Living Root Bridge Trek', details: 'Hike down stone pathways into Nongriat subtropical rainforest. Cross 150-year-old living root bridges and dip into Rainbow Falls crystal turquoise pools.', meals: 'Breakfast & Dinner', stay: 'Cherrapunji Holiday Resort' },
+      { day: 4, title: 'Mawlynnong Cleanest Village & Dawki Glass River', details: 'Explore Mawlynnong village with single living root bridge. Reach Dawki border where wooden boats float mid-air on crystal-clear Umngot river.', meals: 'Breakfast & Dinner', stay: 'Riverside Camp / Cottage, Shnongpdeng' },
+      { day: 5, title: 'Krang Shuri Azure Waterfalls & Return via Guwahati', details: 'Swim under the magical turquoise waters of Krang Shuri falls. Visit ancient monoliths at Jowai before smooth drop-off at Guwahati.', meals: 'Breakfast Included', stay: 'Departure' },
+    ]
+  },
+  {
+    id: 'jyotirlinga-darshan',
+    name: 'Jyotirlinga & Shaktipeeth Darshan',
+    country: 'India',
+    region: 'Maharashtra & Madhya Pradesh',
+    tagline: 'Grishneshwar · Bhimashankar · Gadhkalika · Harsiddhi Mata',
+    description: 'Embark on a sacred spiritual pilgrimage covering holy Jyotirlingas and revered Shaktipeeths with seamless comfortable transfers, VIP darshan coordination, and satvik stays.',
+    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220481/727158786_17916396195398063_5804642615287964419_n.webp',
+    heroImage: '/hero/jyotirlinga-darshan.jpg',
+    secondaryImages: [
+      '/hero/jyotirlinga-darshan.jpg',
+    ],
+    priceINR: 4999,
+    priceUSD: 65,
+    duration: '6 Days / 5 Nights',
+    rating: 4.93,
+    reviewCount: 245,
+    badge: 'Divine Yatra',
+    category: 'spiritual',
+    bestTimeToVisit: 'October to March (Pleasant Temple Weather)',
+    highlights: [
+      'Grishneshwar Jyotirlinga (12th Sacred Jyotirlinga)',
+      'Bhimashankar Jyotirlinga in Western Ghats Sahyadri Hills',
+      'Harsiddhi Mata Shaktipeeth & Gadhkalika Mata Temple',
+      'Mahakaleshwar Temple Ujjain Darshan & Aarti coordination',
+      'Dedicated Spiritual Trip Coordinator & Satvik Meals'
+    ],
+    inclusions: [
+      'Clean Deluxe Hotel Stays near Temple premises',
+      'Daily Satvik Vegetarian Breakfast & Dinners',
+      'Sanitized AC Luxury Coach / Bus Transfers',
+      'Temple Guide & VIP Darshan assistance',
+      'Toll taxes, parking and driver allowances'
+    ],
+    exclusions: [
+      'Personal Pooja, Abhishek & Dakshina offerings',
+      'Travel tickets from hometown to reporting city',
+      'Personal laundry, beverages and lunch expenses'
+    ],
+    departureDates: ['18 Oct 2026', '28 Oct 2026', '12 Nov 2026', '26 Nov 2026'],
+    itinerary: [
+      { day: 1, title: 'Assembly & Drive toward Bhimashankar', details: 'Assemble at departure hub. Travel through picturesque Sahyadri ghats to sacred Bhimashankar Jyotirlinga temple.', meals: 'Dinner Included', stay: 'Comfort Stay, Bhimashankar' },
+      { day: 2, title: 'Bhimashankar Darshan & Transfer to Aurangabad', details: 'Morning holy jalabhishekam at Bhimashankar. Proceed toward Aurangabad with evening bhajans on the journey.', meals: 'Breakfast & Dinner', stay: 'Deluxe Hotel, Aurangabad' },
+      { day: 3, title: 'Grishneshwar Jyotirlinga & Ellora', details: 'Darshan at Grishneshwar, the 12th Jyotirlinga. Witness the architectural wonder of ancient Kailash Temple nearby.', meals: 'Breakfast & Dinner', stay: 'Deluxe Hotel, Aurangabad' },
+      { day: 4, title: 'Journey to Ujjain: The City of Mahakal', details: 'Drive across the heartland to holy Ujjain. Check into hotel and attend evening Sandhya Aarti along the banks of Shipra river.', meals: 'Breakfast & Dinner', stay: 'Temple Stay, Ujjain' },
+      { day: 5, title: 'Gadhkalika Mata & Harsiddhi Shaktipeeth Darshan', details: 'Perform pooja at ancient Harsiddhi Mata Shaktipeeth and Gadhkalika temple. Seek blessings at Mahakaleshwar temple.', meals: 'Breakfast & Dinner', stay: 'Temple Stay, Ujjain' },
+      { day: 6, title: 'Spiritual Fulfillment & Return Journey', details: 'Morning prayer and breakfast before returning with prasad and auspicious divine memories.', meals: 'Breakfast Included', stay: 'Departure' },
+    ]
+  },
+  {
+    id: 'kainchi-dham-weekend',
+    name: 'Kainchi Dham & Mukteshwar',
+    country: 'India',
+    region: 'Uttarakhand (Ex-Delhi & Jaipur)',
+    tagline: 'Neeb Karori Baba Ashram & Mukteshwar Himalayan Vistas',
+    description: 'Experience deep spiritual peace at Neem Karoli Baba Kainchi Dham Ashram, soak in 360-degree snow-capped Himalayan panoramas at Mukteshwar, and walk pine forests with fellow Parindey.',
+    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220481/761747174_17923506819398063_6676138420613236619_n.webp',
+    heroImage: '/hero/kainchi-dham-weekend.jpg',
+    secondaryImages: [
+      '/hero/kainchi-dham-weekend.jpg',
+    ],
+    priceINR: 4999,
+    priceUSD: 65,
+    duration: '3 Days / 2 Nights',
+    rating: 4.97,
+    reviewCount: 380,
+    badge: 'Popular',
+    category: 'weekend',
+    bestTimeToVisit: 'All Year / Oct to Nov (Serene Foothill Weather)',
+    highlights: [
+      'Kainchi Dham Neem Karoli Baba Ashram Darshan & Meditation',
+      'Chauli Ki Jali Cliff Point & Mukteshwar Dham Temple',
+      'Scenic Himalayan Sunset & Sunrise Views of Nanda Devi Range',
+      'Nainital Lake Drive & Bhimtal Water activities',
+      'Convenient Overnight AC Pushback Bus Ex-Delhi & Jaipur'
+    ],
+    inclusions: [
+      '2 Nights Hill Resort Accommodation in Mukteshwar / Nainital',
+      'Daily Breakfast & Homestyle Mountain Dinners',
+      'Round-Trip AC Tempo Traveler / Luxury Coach from Delhi & Jaipur',
+      'Dedicated Parindaa Trip Captain and coordinator',
+      'All tolls, driver charges & parking fees'
+    ],
+    exclusions: [
+      'Lunch and roadside cafe stops',
+      'Personal adventure sports (rock climbing/zipline at Chauli Ki Jali)',
+      'Personal shopping for local jams and woollens'
+    ],
+    departureDates: ['Every Friday: 16 Oct', '23 Oct', '30 Oct', '06 Nov', '13 Nov 2026'],
+    itinerary: [
+      { day: 1, title: 'Overnight Departure from Delhi / Jaipur', details: 'Board comfortable AC traveler from Delhi/Jaipur in the evening. Overnight drive through scenic foothills into Kumaon Himalayas.', meals: 'Night Transit', stay: 'Overnight Journey' },
+      { day: 2, title: 'Kainchi Dham Darshan & Mukteshwar Check-in', details: 'Reach peaceful Kainchi Dham early morning. Spend time in meditation and prasad. Drive to scenic Mukteshwar for cliff views.', meals: 'Breakfast & Dinner', stay: 'Pine View Retreat, Mukteshwar' },
+      { day: 3, title: 'Chauli Ki Jali, Bhimtal & Return Journey', details: 'Sunrise view of snow peaks. Visit 350-year-old Mukteshwar temple and Chauli Ki Jali. Stop at Bhimtal before night drop-off in Delhi/Jaipur.', meals: 'Breakfast Included', stay: 'Return Transit' },
+    ]
+  },
+  {
+    id: 'goa-bike-adventure',
+    name: 'Goa Coastal Bike Trip',
+    country: 'India',
+    region: 'Goa & Konkan Coast',
+    tagline: 'Dudhsagar Waterfalls · Major North & South Beaches · Fun Roads',
+    description: 'Feel the sea wind on two wheels! Cruise along palm-fringed coastal highways, marvel at the four-tiered Dudhsagar Waterfalls, explore secret southern coves, and party under starry beach skies.',
+    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220481/724279254_17915485848398063_8979356828108422140_n.webp',
+    heroImage: '/hero/goa-bike-adventure.jpg',
+    secondaryImages: [
+      '/hero/goa-bike-adventure.jpg',
+    ],
+    priceINR: 6500,
+    priceUSD: 85,
+    duration: '5 Days / 4 Nights',
+    rating: 4.92,
+    reviewCount: 310,
+    badge: 'Popular',
+    category: 'adventure',
+    bestTimeToVisit: 'October to February (Sunny Coastal Breeze)',
+    highlights: [
+      'Dudhsagar Waterfalls 4x4 Jeep Safari & Swim',
+      'Both North (Anjuna, Vagator) and South Goa (Palolem, Cola) Beaches',
+      'Scooty / Bike Rental Included throughout the trip',
+      'Historic Chapora Fort (Dil Chahta Hai) & Fort Aguada',
+      'Beachside Sunset Campfire & Acoustic Music Night'
+    ],
+    inclusions: [
+      '4-Star Resort stay with Swimming Pool',
+      'Scooty / Royal Enfield Bike option included for all days',
+      'Daily Buffet Breakfast',
+      'Dudhsagar Wildlife Sanctuary Safari entry permits',
+      'Experienced Parindaa Bike Marshal & Leader'
+    ],
+    exclusions: [
+      'Fuel for bikes (pay-as-you-go)',
+      'Travel to Goa airport/station',
+      'Personal water sports (parasailing/jet ski)',
+      'Alcoholic drinks and club entry covers'
+    ],
+    departureDates: ['21 Oct 2026', '04 Nov 2026', '18 Nov 2026', '02 Dec 2026'],
+    itinerary: [
+      { day: 1, title: 'Arrival in Goa & Scooter Handover', details: 'Check into your resort. Receive your sanitized scooty/bike with helmets. Evening sunset ride to Vagator beach and hilltop cafe.', meals: 'Welcome Drink', stay: 'Resort with Pool, North Goa' },
+      { day: 2, title: 'Majestic Dudhsagar Waterfall Expedition', details: 'Early morning ride towards Mollem National Park. Jump into 4x4 jeeps through jungle streams to the roaring Dudhsagar waterfalls.', meals: 'Breakfast', stay: 'Resort with Pool, North Goa' },
+      { day: 3, title: 'North Goa Coastal Trail: Forts & Secret Coves', details: 'Cruise past Portuguese villas to Chapora Fort, Morjim beach, and Mandrem. Watch golden sunset at Ashwem beach.', meals: 'Breakfast', stay: 'Resort with Pool, North Goa' },
+      { day: 4, title: 'South Goa Explorer: Palolem & Cabo de Rama', details: 'Ride south to the secluded cliffs of Cabo de Rama and turquoise waters of Palolem. Celebrate farewell bonfire night.', meals: 'Breakfast', stay: 'Resort with Pool, North Goa' },
+      { day: 5, title: 'Souvenir Cruise & Flight Departure', details: 'Last-minute beach stroll and shopping in Panjim Fontainhas Latin Quarter before vehicle handover and airport drop-off.', meals: 'Breakfast Included', stay: 'Departure' },
+    ]
+  },
+  {
+    id: 'leh-ladakh-circuit',
+    name: 'Leh Ladakh Expedition',
+    country: 'India',
+    region: 'Trans-Himalayas, Ladakh',
+    tagline: 'Leh · Nubra Valley · Turtuk · Pangong Lake · Hanle · Umling La',
+    description: 'Ride across the world highest motorable pass Umling La (19,024 ft), camp beside the surreal shifting blue waters of Pangong Tso, and stargaze at the Dark Sky Reserve in Hanle.',
+    image: 'https://res.cloudinary.com/x1dci3fh/image/upload/v1791220481/726660058_17915957589398063_1894404032407606329_n.webp',
+    heroImage: '/hero/leh-ladakh-circuit.jpg',
+    secondaryImages: [
+      '/hero/leh-ladakh-circuit.jpg',
+    ],
+    priceINR: 16500,
+    priceUSD: 210,
+    duration: '7 Days / 6 Nights',
+    rating: 4.98,
+    reviewCount: 450,
+    badge: 'Popular',
+    category: 'himalayan',
+    bestTimeToVisit: 'May to October (Open High Mountain Passes)',
+    highlights: [
+      'Umling La Pass (19,024 ft) - Highest Motorable Road in the World',
+      'Pangong Tso Lake Camping under Galactic Stars',
+      'Hunder Sand Dunes & Double Humped Bactrian Camel Ride',
+      'Turtuk: Indo-Balti Border Village on the LOC',
+      'Khardung La Pass (17,582 ft) & Hanle Dark Sky Observatory'
+    ],
+    inclusions: [
+      'Deluxe Hotel Stays in Leh & Luxury Swiss Tents at Pangong & Nubra',
+      'Daily Nutritious High-Altitude Breakfast & Dinners',
+      'Royal Enfield Himalayan / 4x4 Backup Vehicle with Mechanic',
+      'Oxygen Cylinders, Medical First Aid & Certified Expedition Captain',
+      'All Inner Line Permits, Wildlife & Environmental Fees'
+    ],
+    exclusions: [
+      'Flights to/from Leh Kushok Bakula Airport (IXZ)',
+      'Fuel for bikes (if taking bike package)',
+      'Personal riding gear & security deposit',
+      'Lunches during daily rides'
+    ],
+    departureDates: ['17 Oct 2026', '25 Oct 2026', '08 Nov 2026', '22 Nov 2026'],
+    itinerary: [
+      { day: 1, title: 'Arrival in Leh & Crucial Acclimatization', details: 'Touchdown at high-altitude Leh (11,500 ft). Strict rest for altitude acclimatization with hot garlic soup. Evening walk at Leh Market.', meals: 'Dinner Included', stay: 'Grand Heritage Hotel, Leh' },
+      { day: 2, title: 'Leh Local: Magnetic Hill, Sangam & Hall of Fame', details: 'Visit confluence of Indus and Zanskar rivers, Magnetic Hill, Gurudwara Pathar Sahib, and test-ride bikes through Sham Valley.', meals: 'Breakfast & Dinner', stay: 'Grand Heritage Hotel, Leh' },
+      { day: 3, title: 'Leh to Nubra Valley via Khardung La Pass', details: 'Scale the mighty Khardung La (17,582 ft). Descend into Nubra sand dunes for ATV riding and double-humped camel safari at sunset.', meals: 'Breakfast & Dinner', stay: 'Deluxe Swiss Camps, Nubra' },
+      { day: 4, title: 'Excursion to Turtuk: The Last Indian Outpost', details: 'Ride along Shyok river to Baltistan border village Turtuk. Taste fresh apricots and experience unique Balti culture.', meals: 'Breakfast & Dinner', stay: 'Deluxe Swiss Camps, Nubra' },
+      { day: 5, title: 'Nubra to Pangong Tso Lake via Shyok Route', details: 'Rugged riverbed ride to the dramatic colors of Pangong Lake (14,270 ft). Stargaze under zero light pollution.', meals: 'Breakfast & Dinner', stay: 'Luxury Lake Cottages, Pangong' },
+      { day: 6, title: 'Pangong to Hanle & Umling La Summit Push', details: 'Early ascent to Umling La (19,024 ft), the rooftop of the world. Celebrate triumph before returning to Leh through Chang La.', meals: 'Breakfast & Dinner', stay: 'Grand Heritage Hotel, Leh' },
+      { day: 7, title: 'Departure with the Badge of a True Parinda', details: 'Transfer to Leh Airport with unforgettable memories of the ultimate Himalayan expedition.', meals: 'Breakfast Included', stay: 'Departure' },
+    ]
   }
 ];
 
@@ -500,66 +514,66 @@ export const REVIEWS: Review[] = [
     id: 'rev-1',
     author: 'Aarav Malhotra',
     location: 'Mumbai, Maharashtra',
-    avatar: 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=300&q=80',
-    trip: 'Unseen Meghalaya (5D/6N)',
+    avatar: '/avatars/aarav-malhotra.jpg',
+    trip: 'Kashmir - Gulmarg (5D/4N)',
     rating: 5,
-    date: 'September 2026',
-    comment: 'The 13+ waterfalls and living root bridges in Meghalaya with Parindaa Travels were beyond words. Our captain made sure every single trek and cave was safe and exhilarating. Truly felt like family!',
+    date: 'October 2026',
+    comment: 'Ascending Apharwat Peak on the Gulmarg Gondola at 13,780 ft with Parindaa was the ultimate experience of my life! The autumn crisp air and snow slopes were magical. Our trip captain arranged every single permit and gear smoothly.',
     verified: true
   },
   {
     id: 'rev-2',
     author: 'Neha Sharma',
     location: 'New Delhi, India',
-    avatar: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=300&q=80',
-    trip: 'Kashmir: City of Love (6D/5N)',
+    avatar: '/avatars/neha-sharma.jpg',
+    trip: 'Andaman Island Odyssey (6D/5N)',
     rating: 5,
-    date: 'August 2026',
-    comment: 'From the Shikara ride on Dal Lake to the Gulmarg Gondola Phase 2, everything was organized to perfection. Parindaa provided the best rates, top safety, and genuine local hospitality.',
+    date: 'October 2026',
+    comment: 'Radhanagar Beach sunset in Havelock and coral snorkeling at Elephant Beach was a pure dream come true! October seas were crystal calm and turquoise. Parindaa took care of all luxury catamarans and island transfers flawlessly.',
     verified: true
   },
   {
     id: 'rev-3',
     author: 'Rohan Deshmukh',
     location: 'Pune, Maharashtra',
-    avatar: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=300&q=80',
-    trip: 'Leh Ladakh Expedition (7D/6N)',
+    avatar: '/avatars/rohan-deshmukh.jpg',
+    trip: "Kerala: God's Own Country (5D/4N)",
     rating: 5,
-    date: 'July 2026',
-    comment: 'Reaching Umling La (19,024 ft) with Parindaa marshals was the crowning moment of my life! Flawless bikes, oxygen backup, and starry campfire nights at Pangong.',
+    date: 'September 2026',
+    comment: 'Munnar mist tea hills and the private luxury houseboat in Alleppey backwaters were surreal. The captain treated our group like family. Top hygiene, peaceful stays and delicious authentic Sadya feast!',
     verified: true
   },
   {
     id: 'rev-4',
     author: 'Priya Iyer',
     location: 'Bengaluru, Karnataka',
-    avatar: 'https://images.unsplash.com/photo-1614289371518-722f2615943d?auto=format&fit=crop&w=300&q=80',
-    trip: 'Kainchi Dham & Mukteshwar Weekend',
+    avatar: '/avatars/priya-iyer.jpg',
+    trip: 'Unseen Meghalaya (5D/6N)',
     rating: 5,
-    date: 'August 2026',
-    comment: 'A soul-healing weekend trip to Neem Karoli Baba Kainchi Dham. The AC luxury traveler and hill stays were super comfortable. Booked again for my parents!',
+    date: 'September 2026',
+    comment: 'The 13+ waterfalls and living root bridges in Meghalaya with Parindaa Travels were beyond words. As a solo female traveler, safety and respect were paramount, and Parindaa delivered 100%!',
     verified: true
   },
   {
     id: 'rev-5',
     author: 'Vikramaditya Rathore',
     location: 'Jaipur, Rajasthan',
-    avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80',
-    trip: 'Goa Beyond Beaches (4D/3N)',
+    avatar: '/avatars/vikramaditya-rathore.jpg',
+    trip: 'Kainchi Dham & Mukteshwar Weekend',
     rating: 5,
-    date: 'September 2026',
-    comment: 'Exploring hidden waterfalls and the vibrant Latin Quarter of Fontainhas with Parindaa was surreal. Best group vibe and genuine captain support throughout!',
+    date: 'August 2026',
+    comment: 'A soul-healing weekend trip to Neem Karoli Baba Kainchi Dham Ashram. The AC luxury traveler from Jaipur and mountain resort stays were super comfortable. Booked again for my parents!',
     verified: true
   },
   {
     id: 'rev-6',
     author: 'Ananya Sen',
     location: 'Kolkata, West Bengal',
-    avatar: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=300&q=80',
-    trip: 'Kerala: God\'s Own Country (5D/4N)',
+    avatar: '/avatars/ananya-sen.jpg',
+    trip: 'Leh Ladakh Expedition (7D/6N)',
     rating: 5,
-    date: 'August 2026',
-    comment: 'Munnar tea gardens and the Alleppey houseboat cruise were pure bliss. As a solo female traveler, safety and respect were paramount, and Parindaa delivered 100%!',
+    date: 'July 2026',
+    comment: 'Reaching Umling La (19,024 ft) with Parindaa marshals was unforgettable! Oxygen backup, warm campfires at Pangong Tso, and incredible camaraderie throughout the expedition.',
     verified: true
   }
 ];

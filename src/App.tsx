@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { DESTINATIONS, Destination } from './data/travelData';
+import { PolicyType } from './data/policyData';
 import { Navbar } from './components/Navbar';
 import { HeroFoxico } from './components/HeroFoxico';
 import { SearchWidget, SearchCriteria } from './components/SearchWidget';
@@ -12,6 +13,7 @@ import { TestimonialsSection } from './components/TestimonialsSection';
 import { FAQSection } from './components/FAQSection';
 import { NewsletterBanner } from './components/NewsletterBanner';
 import { Footer } from './components/Footer';
+import { PolicyPage } from './components/PolicyPage';
 import { ItineraryModal } from './components/ItineraryModal';
 import { TripPlannerModal } from './components/TripPlannerModal';
 import { SavedTripsDrawer } from './components/SavedTripsDrawer';
@@ -26,6 +28,7 @@ export default function App() {
   const [savedIds, setSavedIds] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [activePolicy, setActivePolicy] = useState<PolicyType | null>(null);
 
   // Load and persist savedIds
   useEffect(() => {
@@ -39,6 +42,51 @@ export default function App() {
     }
   }, []);
 
+  const parseHashPolicy = (): PolicyType | null => {
+    const rawHash = window.location.hash.replace('#', '').trim();
+    if (
+      rawHash === 'privacy-policy' ||
+      rawHash === 'cancellation-policy' ||
+      rawHash === 'safety-guidelines' ||
+      rawHash === 'terms-of-service'
+    ) {
+      return rawHash as PolicyType;
+    }
+    return null;
+  };
+
+  // Synchronize active policy with URL hash on load & hashchange
+  useEffect(() => {
+    const initialFromHash = parseHashPolicy();
+    if (initialFromHash) {
+      setActivePolicy(initialFromHash);
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    const handleHashChange = () => {
+      const matched = parseHashPolicy();
+      setActivePolicy(matched);
+      if (matched) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const handleOpenPolicy = (policyId: PolicyType) => {
+    setActivePolicy(policyId);
+    window.location.hash = policyId;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleBackToHome = () => {
+    setActivePolicy(null);
+    history.pushState('', document.title, window.location.pathname + window.location.search);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const showToast = (msg: string) => {
     setToastMessage(msg);
     setTimeout(() => {
@@ -46,18 +94,20 @@ export default function App() {
     }, 3500);
   };
 
+  const handleSelectDestination = React.useCallback((dest: Destination) => {
+    setActiveDestination(dest);
+  }, []);
+
   const handleToggleSave = (id: string) => {
-    setSavedIds((prev) => {
-      const exists = prev.includes(id);
-      const updated = exists ? prev.filter((item) => item !== id) : [...prev, id];
-      try {
-        localStorage.setItem('parindaa_saved_trips', JSON.stringify(updated));
-      } catch {
-        // ignore
-      }
-      showToast(exists ? 'Removed from saved trips' : 'Added to your travel bucket list! ❤️');
-      return updated;
-    });
+    const exists = savedIds.includes(id);
+    const updated = exists ? savedIds.filter((item) => item !== id) : [...savedIds, id];
+    setSavedIds(updated);
+    try {
+      localStorage.setItem('parindaa_saved_trips', JSON.stringify(updated));
+    } catch {
+      // ignore
+    }
+    showToast(exists ? 'Removed from saved trips' : 'Added to your travel bucket list! ❤️');
   };
 
   const handleToggleCurrency = () => {
@@ -66,6 +116,11 @@ export default function App() {
   };
 
   const handleSearch = (criteria: SearchCriteria) => {
+    if (activePolicy) {
+      setActivePolicy(null);
+      history.pushState('', document.title, window.location.pathname + window.location.search);
+    }
+
     if (criteria.to) {
       setSearchQuery(criteria.to);
       const matched = DESTINATIONS.find((d) =>
@@ -79,10 +134,12 @@ export default function App() {
     }
 
     // Smooth scroll to destinations section
-    const elem = document.getElementById('destinations');
-    if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' });
-    }
+    setTimeout(() => {
+      const elem = document.getElementById('destinations');
+      if (elem) {
+        elem.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 60);
   };
 
   const handleBookSuccess = (tripName: string) => {
@@ -90,10 +147,21 @@ export default function App() {
   };
 
   const handleSelectNav = (sectionId: string) => {
-    const elem = document.getElementById(sectionId);
-    if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' });
+    if (activePolicy) {
+      setActivePolicy(null);
+      history.pushState('', document.title, window.location.pathname + window.location.search);
     }
+
+    setTimeout(() => {
+      if (sectionId === 'hero') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const elem = document.getElementById(sectionId);
+        if (elem) {
+          elem.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, 50);
   };
 
   const savedDestinations = DESTINATIONS.filter((d) => savedIds.includes(d.id));
@@ -111,65 +179,76 @@ export default function App() {
         onSelectNav={handleSelectNav}
       />
 
-      <main className="flex-1">
-        {/* Foxico Cinematic Interactive Hero Showcase */}
-        <HeroFoxico
-          destinations={DESTINATIONS}
-          activeDestination={activeDestination}
-          onSelectDestination={(dest) => setActiveDestination(dest)}
-          onExploreDestination={(dest) => setSelectedItinerary(dest)}
-          onOpenPlanner={() => setIsPlannerOpen(true)}
-          currency={currency}
-          savedIds={savedIds}
-          onToggleSave={handleToggleSave}
-        />
+      {/* Main Content: Render dedicated PolicyPage if active, otherwise full landing experience */}
+      {activePolicy ? (
+        <main className="flex-1">
+          <PolicyPage
+            initialPolicy={activePolicy}
+            onBackToHome={handleBackToHome}
+            onSelectNav={handleSelectNav}
+          />
+        </main>
+      ) : (
+        <main className="flex-1">
+          {/* Foxico Cinematic Interactive Hero Showcase */}
+          <HeroFoxico
+            destinations={DESTINATIONS}
+            activeDestination={activeDestination}
+            onSelectDestination={handleSelectDestination}
+            onExploreDestination={(dest) => setSelectedItinerary(dest)}
+            onOpenPlanner={() => setIsPlannerOpen(true)}
+            currency={currency}
+            savedIds={savedIds}
+            onToggleSave={handleToggleSave}
+          />
 
-        {/* Wanderly Multi-Tab Search & Booking Engine */}
-        <SearchWidget
-          onSearch={handleSearch}
-          destinations={DESTINATIONS}
-          currency={currency}
-        />
+          {/* Wanderly Multi-Tab Search & Booking Engine */}
+          <SearchWidget
+            onSearch={handleSearch}
+            destinations={DESTINATIONS}
+            currency={currency}
+          />
 
-        {/* 4 Trust & Safety Pillars */}
-        <TrustPillars />
+          {/* 4 Trust & Safety Pillars */}
+          <TrustPillars />
 
-        {/* India's 1st Experimental Travel Cinema Project Feature Banner */}
-        <TravelCinemaBanner />
+          {/* India's 1st Experimental Travel Cinema Project Feature Banner */}
+          <TravelCinemaBanner />
 
-        {/* Popular Destinations Grid (Official Parindaa Group Trips) */}
-        <PopularDestinations
-          destinations={DESTINATIONS}
-          onSelectDestination={(dest) => {
-            setActiveDestination(dest);
-            const heroElem = document.getElementById('hero');
-            if (heroElem) heroElem.scrollIntoView({ behavior: 'smooth' });
-          }}
-          onExploreDestination={(dest) => setSelectedItinerary(dest)}
-          currency={currency}
-          savedIds={savedIds}
-          onToggleSave={handleToggleSave}
-          searchFilter={searchQuery}
-        />
+          {/* Popular Destinations Grid (Official Parindaa Group Trips) */}
+          <PopularDestinations
+            destinations={DESTINATIONS}
+            onSelectDestination={(dest) => {
+              setActiveDestination(dest);
+              const heroElem = document.getElementById('hero');
+              if (heroElem) heroElem.scrollIntoView({ behavior: 'smooth' });
+            }}
+            onExploreDestination={(dest) => setSelectedItinerary(dest)}
+            currency={currency}
+            savedIds={savedIds}
+            onToggleSave={handleToggleSave}
+            searchFilter={searchQuery}
+          />
 
-        {/* Why Choose Parindaa & Promotional Feature Card */}
-        <WhyChooseParindaa onOpenPlanner={() => setIsPlannerOpen(true)} />
+          {/* Why Choose Parindaa & Promotional Feature Card */}
+          <WhyChooseParindaa onOpenPlanner={() => setIsPlannerOpen(true)} />
 
-        {/* Instagram Tribe & Real Stories Showcase (@parindaa.india) */}
-        <InstagramFeed />
+          {/* Instagram Tribe & Real Stories Showcase (@parindaa.india) */}
+          <InstagramFeed />
 
-        {/* Verified Traveler Testimonials */}
-        <TestimonialsSection />
+          {/* Verified Traveler Testimonials */}
+          <TestimonialsSection />
 
-        {/* Frequently Asked Questions */}
-        <FAQSection />
+          {/* Frequently Asked Questions */}
+          <FAQSection />
 
-        {/* Newsletter Subscription Banner */}
-        <NewsletterBanner />
-      </main>
+          {/* Newsletter Subscription Banner */}
+          <NewsletterBanner />
+        </main>
+      )}
 
-      {/* Comprehensive Footer */}
-      <Footer onSelectNav={handleSelectNav} />
+      {/* Comprehensive Footer with Connected Policy Pages */}
+      <Footer onSelectNav={handleSelectNav} onOpenPolicy={handleOpenPolicy} />
 
       {/* Floating WhatsApp Quick Connect Button to Official Number */}
       <div className="fixed bottom-6 right-6 z-40 flex items-center gap-2">

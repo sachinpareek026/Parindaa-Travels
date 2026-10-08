@@ -1,11 +1,18 @@
 import React from 'react';
-import { Instagram, Facebook, Twitter, Youtube, Phone, Mail, MapPin } from 'lucide-react';
+import { Instagram, Facebook, Twitter, Youtube, Phone, Mail, MapPin, ShieldCheck, RotateCcw, HeartPulse, FileText } from 'lucide-react';
+import { PolicyType } from '../data/policyData';
 
 interface FooterProps {
   onSelectNav: (sectionId: string) => void;
+  onOpenPolicy: (policyId: PolicyType) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
+export const Footer: React.FC<FooterProps> = ({ onSelectNav, onOpenPolicy }) => {
+  const handlePolicyClick = (e: React.MouseEvent, policyId: PolicyType) => {
+    e.preventDefault();
+    onOpenPolicy(policyId);
+  };
+
   return (
     <footer className="bg-slate-950 text-slate-400 text-xs border-t border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -84,10 +91,10 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links & Legal Policies */}
           <div className="space-y-3">
             <h4 className="font-bold text-sm text-white uppercase tracking-wider">
-              Explore
+              Explore & Legal
             </h4>
             <ul className="space-y-2">
               <li>
@@ -116,19 +123,51 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
               </li>
               <li>
                 <button
-                  onClick={() => onSelectNav('community')}
-                  className="hover:text-[#4a97ba] transition-colors cursor-pointer text-left"
-                >
-                  @parindaa.india Community
-                </button>
-              </li>
-              <li>
-                <button
                   onClick={() => onSelectNav('faqs')}
                   className="hover:text-[#4a97ba] transition-colors cursor-pointer text-left"
                 >
-                  Booking FAQs & Policies
+                  Booking FAQs
                 </button>
+              </li>
+              <li className="pt-2 border-t border-slate-900">
+                <a
+                  href="#privacy-policy"
+                  onClick={(e) => handlePolicyClick(e, 'privacy-policy')}
+                  className="hover:text-white transition-colors cursor-pointer text-left flex items-center gap-1.5"
+                >
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#3482a4]" />
+                  <span>Privacy Policy</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#cancellation-policy"
+                  onClick={(e) => handlePolicyClick(e, 'cancellation-policy')}
+                  className="hover:text-white transition-colors cursor-pointer text-left flex items-center gap-1.5"
+                >
+                  <RotateCcw className="w-3.5 h-3.5 text-[#cbb72c]" />
+                  <span>Cancellation Policy</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#safety-guidelines"
+                  onClick={(e) => handlePolicyClick(e, 'safety-guidelines')}
+                  className="hover:text-white transition-colors cursor-pointer text-left flex items-center gap-1.5"
+                >
+                  <HeartPulse className="w-3.5 h-3.5 text-rose-400" />
+                  <span>Safety Guidelines</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#terms-of-service"
+                  onClick={(e) => handlePolicyClick(e, 'terms-of-service')}
+                  className="hover:text-white transition-colors cursor-pointer text-left flex items-center gap-1.5"
+                >
+                  <FileText className="w-3.5 h-3.5 text-slate-400" />
+                  <span>Terms of Service</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -179,11 +218,6 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
                   Andaman Island Odyssey
                 </span>
               </li>
-              <li>
-                <span className="hover:text-[#4a97ba] transition-colors cursor-pointer">
-                  Kashmir - Gulmarg Winter Snow
-                </span>
-              </li>
             </ul>
           </div>
 
@@ -228,23 +262,45 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
                 </div>
               </div>
             </div>
-            <div className="pt-2 flex flex-wrap gap-1.5">
-              <span className="inline-block text-[10px] text-slate-300 border border-slate-800 rounded-md px-2 py-1 bg-slate-900/60 font-medium">
-                UDYAM-RJ-30-0141140
-              </span>
-            </div>
           </div>
 
         </div>
 
-        {/* Bottom copyright line */}
+        {/* Bottom copyright line with All 4 Policy Links */}
         <div className="mt-12 pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
           <p>© {new Date().getFullYear()} Parindaa Travels (Parindaa India). All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <span className="hover:text-slate-400 cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-slate-400 cursor-pointer">Terms of Service</span>
-            <span className="hover:text-slate-400 cursor-pointer">Cancellation Policy</span>
-            <span className="hover:text-slate-400 cursor-pointer">Safety Guidelines</span>
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2">
+            <a
+              href="#privacy-policy"
+              onClick={(e) => handlePolicyClick(e, 'privacy-policy')}
+              className="hover:text-slate-300 transition-colors cursor-pointer"
+            >
+              Privacy Policy
+            </a>
+            <span aria-hidden="true" className="text-slate-800 hidden sm:inline">·</span>
+            <a
+              href="#cancellation-policy"
+              onClick={(e) => handlePolicyClick(e, 'cancellation-policy')}
+              className="hover:text-slate-300 transition-colors cursor-pointer"
+            >
+              Cancellation Policy
+            </a>
+            <span aria-hidden="true" className="text-slate-800 hidden sm:inline">·</span>
+            <a
+              href="#safety-guidelines"
+              onClick={(e) => handlePolicyClick(e, 'safety-guidelines')}
+              className="hover:text-slate-300 transition-colors cursor-pointer"
+            >
+              Safety Guidelines
+            </a>
+            <span aria-hidden="true" className="text-slate-800 hidden sm:inline">·</span>
+            <a
+              href="#terms-of-service"
+              onClick={(e) => handlePolicyClick(e, 'terms-of-service')}
+              className="hover:text-slate-300 transition-colors cursor-pointer"
+            >
+              Terms of Service
+            </a>
           </div>
         </div>
 
@@ -252,3 +308,4 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNav }) => {
     </footer>
   );
 };
+

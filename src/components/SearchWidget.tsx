@@ -59,7 +59,7 @@ export const SearchWidget: React.FC<SearchWidgetProps> = ({ onSearch, destinatio
   };
 
   return (
-    <div id="search" className="relative -mt-10 sm:-mt-14 z-30 max-w-6xl mx-auto px-4 sm:px-6">
+    <div id="search" className="relative mt-8 sm:mt-12 lg:mt-16 mb-12 sm:mb-16 z-30 max-w-6xl mx-auto px-4 sm:px-6">
       <div className="bg-white rounded-3xl shadow-xl shadow-slate-900/10 border border-slate-100 p-4 sm:p-6 transition-all">
         
         {/* Navigation Tabs (Curated Departures & Custom Expeditions) */}

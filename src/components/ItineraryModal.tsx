@@ -203,7 +203,7 @@ ${destination.highlights.slice(0, 3).map((hl) => `• ${hl}`).join('\n')}
         <div className="overflow-y-auto p-4 sm:p-6 space-y-6 flex-1">
           
           {/* Key Facts Strip */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100 text-xs">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100 text-xs">
             <div>
               <span className="text-slate-400 block text-[11px]">Duration</span>
               <span className="font-bold text-slate-800 flex items-center gap-1 mt-0.5">
@@ -216,13 +216,6 @@ ${destination.highlights.slice(0, 3).map((hl) => `• ${hl}`).join('\n')}
               <span className="font-bold text-slate-800 flex items-center gap-1 mt-0.5">
                 <Star className="w-3.5 h-3.5 fill-[#cbb72c] text-[#cbb72c]" />
                 {destination.rating} ({destination.reviewCount} reviews)
-              </span>
-            </div>
-            <div>
-              <span className="text-slate-400 block text-[11px]">Next Group Batch</span>
-              <span className="font-bold text-slate-800 flex items-center gap-1 mt-0.5">
-                <Calendar className="w-3.5 h-3.5 text-[#3482a4]" />
-                {currentDeparture}
               </span>
             </div>
             <div>
