@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
+import { Send, CheckCircle2, Instagram, Youtube } from 'lucide-react';
 
 export const NewsletterBanner: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -71,41 +71,23 @@ export const NewsletterBanner: React.FC = () => {
                 </form>
               )}
 
-              {/* Social Media Circular Links (from Wanderly photo) */}
+              {/* Social Media Circular Links */}
               <div className="flex items-center gap-2 pt-2 sm:pt-0 shrink-0">
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#3482a4] hover:text-white border border-white/20 flex items-center justify-center text-white transition-colors cursor-pointer"
-                  title="Facebook"
-                >
-                  <Facebook className="w-4 h-4" />
-                </a>
                 <a
                   href="https://www.instagram.com/parindaa.india/"
                   target="_blank"
                   rel="noreferrer"
                   className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#cbb72c] hover:text-slate-950 border border-white/20 flex items-center justify-center text-white transition-colors cursor-pointer"
-                  title="Instagram"
+                  title="Instagram @parindaa.india"
                 >
                   <Instagram className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://youtube.com/@parindaa_in?si=eT8d1J7TbUxweKrU"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#3482a4] hover:text-white border border-white/20 flex items-center justify-center text-white transition-colors cursor-pointer"
-                  title="Twitter"
-                >
-                  <Twitter className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#3482a4] hover:text-white border border-white/20 flex items-center justify-center text-white transition-colors cursor-pointer"
-                  title="YouTube"
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#e62117] hover:text-white border border-white/20 flex items-center justify-center text-white transition-colors cursor-pointer"
+                  title="YouTube @parindaa_in"
                 >
                   <Youtube className="w-4 h-4" />
                 </a>

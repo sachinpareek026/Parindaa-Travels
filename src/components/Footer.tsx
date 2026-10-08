@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Facebook, Twitter, Youtube, Phone, Mail, MapPin, ShieldCheck, RotateCcw, HeartPulse, FileText } from 'lucide-react';
+import { Instagram, Youtube, Phone, Mail, MapPin, ShieldCheck, RotateCcw, HeartPulse, FileText } from 'lucide-react';
 import { PolicyType } from '../data/policyData';
 
 interface FooterProps {
@@ -65,26 +65,11 @@ export const Footer: React.FC<FooterProps> = ({ onSelectNav, onOpenPolicy }) => 
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://youtube.com/@parindaa_in?si=eT8d1J7TbUxweKrU"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#3482a4] hover:text-white flex items-center justify-center transition-colors text-slate-300"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noreferrer"
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#3482a4] hover:text-white flex items-center justify-center transition-colors text-slate-300"
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noreferrer"
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#3482a4] hover:text-white flex items-center justify-center transition-colors text-slate-300"
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#e62117] hover:text-white flex items-center justify-center transition-colors text-slate-300"
+                title="YouTube @parindaa_in"
               >
                 <Youtube className="w-4 h-4" />
               </a>
