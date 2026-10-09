@@ -40,6 +40,18 @@ export default function App() {
     } catch {
       // fallback
     }
+
+    // Dynamic canonical & OpenGraph URL resolution for SPA environment
+    if (typeof window !== 'undefined') {
+      const currentUrl = window.location.origin + window.location.pathname;
+      let ogUrl = document.querySelector('meta[property="og:url"]');
+      if (!ogUrl) {
+        ogUrl = document.createElement('meta');
+        ogUrl.setAttribute('property', 'og:url');
+        document.head.appendChild(ogUrl);
+      }
+      ogUrl.setAttribute('content', currentUrl);
+    }
   }, []);
 
   const parseHashPolicy = (): PolicyType | null => {

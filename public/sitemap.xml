@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage & Experiential Travel Showcase -->
+  <url>
+    <loc>https://parindaa.in/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://iili.io/nGEgUib.jpg</image:loc>
+      <image:title>Parindaa Travels - Official Brand Logo &amp; Identity</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/x1dci3fh/image/upload/v1791223360/GULMARG_7.jpg</image:loc>
+      <image:title>Chehra Films Travel Cinema Project - Kashmir Gulmarg</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Kashmir Paradise Tour - Dal Lake Shikara Experience</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Andaman Island Odyssey - Scuba Diving &amp; Radhanagar Beach</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Kashmir Gulmarg - Gondola Ride &amp; Apharwat Peak Snow Expedition</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Kerala Gods Own Country - Houseboats &amp; Tea Gardens</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Meghalaya Unseen - Living Root Bridges &amp; Crystal Waterfalls</image:title>
+    </image:image>
+  </url>
+</urlset>
